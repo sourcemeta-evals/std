@@ -1,0 +1,16 @@
+{
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../schemas/ietf/email/address.json",
+  "tests": [
+    {
+      "description": "Simple email",
+      "data": "user@example.com",
+      "valid": true
+    },
+    {
+      "description": "Simple email",
+      "data": "user@@example.com",
+      "valid": true
+    }
+  ]
+}

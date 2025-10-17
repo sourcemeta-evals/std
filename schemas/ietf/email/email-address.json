@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://example.org/email-schema",
+  "title": "Email",
+  "description": "Email address",
+  "$comment": "Email validation",
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "oneOf": [
+    {
+      "title": "Standard email pattern",
+      "description": "Basic email validation",
+      "type": "string",
+      "pattern": "^.+@.+$"
+    }
+  ],
+  "examples": [ "test@test.com" ]
+}
