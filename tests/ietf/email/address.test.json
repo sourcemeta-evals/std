@@ -1,0 +1,246 @@
+{
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../schemas/ietf/email/address.json",
+  "tests": [
+    {
+      "data": "user@example.com",
+      "valid": true
+    },
+    {
+      "data": "john.doe@example.com",
+      "valid": true
+    },
+    {
+      "data": "user+tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user_name@example.com",
+      "valid": true
+    },
+    {
+      "data": "user-name@example.com",
+      "valid": true
+    },
+    {
+      "data": "user123@example.com",
+      "valid": true
+    },
+    {
+      "data": "123user@example.com",
+      "valid": true
+    },
+    {
+      "data": "a@example.com",
+      "valid": true
+    },
+    {
+      "data": "test@subdomain.example.com",
+      "valid": true
+    },
+    {
+      "data": "test@sub.domain.example.com",
+      "valid": true
+    },
+    {
+      "data": "user@example.co.uk",
+      "valid": true
+    },
+    {
+      "data": "user@example-domain.com",
+      "valid": true
+    },
+    {
+      "data": "user@123.456.789.012",
+      "valid": true
+    },
+    {
+      "data": "user@[192.168.1.1]",
+      "valid": true
+    },
+    {
+      "data": "user@[127.0.0.1]",
+      "valid": true
+    },
+    {
+      "data": "user!tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user#tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user$tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user%tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user&tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user'tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user*tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user/tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user=tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user?tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user^tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user`tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user{tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user|tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user}tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user~tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "plainaddress",
+      "valid": false
+    },
+    {
+      "data": "@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@",
+      "valid": false
+    },
+    {
+      "data": "user@@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example@com",
+      "valid": false
+    },
+    {
+      "data": "user name@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example .com",
+      "valid": false
+    },
+    {
+      "data": "user@.example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example..com",
+      "valid": false
+    },
+    {
+      "data": "user@example.com.",
+      "valid": false
+    },
+    {
+      "data": ".user@example.com",
+      "valid": false
+    },
+    {
+      "data": "user.@example.com",
+      "valid": false
+    },
+    {
+      "data": "user..name@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@-example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example-.com",
+      "valid": false
+    },
+    {
+      "data": "",
+      "valid": false
+    },
+    {
+      "data": "user@",
+      "valid": false
+    },
+    {
+      "data": "@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@[192.168.1.1",
+      "valid": false
+    },
+    {
+      "data": "user@192.168.1.1]",
+      "valid": false
+    },
+    {
+      "data": "user@[192.168.1.256]",
+      "valid": false
+    },
+    {
+      "data": "user@[999.999.999.999]",
+      "valid": false
+    },
+    {
+      "data": "user@example",
+      "valid": false
+    },
+    {
+      "data": null,
+      "valid": false
+    },
+    {
+      "data": true,
+      "valid": false
+    },
+    {
+      "data": false,
+      "valid": false
+    },
+    {
+      "data": 123,
+      "valid": false
+    },
+    {
+      "data": [],
+      "valid": false
+    },
+    {
+      "data": {},
+      "valid": false
+    }
+  ]
+}
