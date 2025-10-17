@@ -1,0 +1,31 @@
+{
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../schemas/ietf/email/address.json",
+  "tests": [
+    {
+      "description": "Basic email",
+      "data": "user@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email with subdomain",
+      "data": "test@mail.example.com",
+      "valid": true
+    },
+    {
+      "description": "Email with numbers",
+      "data": "user123@example.org",
+      "valid": true
+    },
+    {
+      "description": "Missing at symbol",
+      "data": "userexample.com",
+      "valid": false
+    },
+    {
+      "description": "Missing domain",
+      "data": "user@",
+      "valid": false
+    }
+  ]
+}
