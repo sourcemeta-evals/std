@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RFC 5322 Email Address (Addr-Spec)",
+  "description": "An Internet email address in addr-spec format",
+  "$comment": "https://www.rfc-editor.org/rfc/rfc5322#section-3.4.1",
+  "examples": [
+    "user@example.com",
+    "john.doe@example.com",
+    "user+tag@example.com",
+    "\"user\"@example.com",
+    "user@subdomain.example.com",
+    "user@[192.168.1.1]",
+    "user@[IPv6:2001:db8::1]"
+  ],
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "type": "string",
+  "anyOf": [
+    {
+      "$comment": "Standard addr-spec: dot-atom local-part @ dot-atom domain",
+      "pattern": "^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+    },
+    {
+      "$comment": "Quoted string local-part @ dot-atom domain",
+      "pattern": "^\"(?:[\\x21\\x23-\\x5B\\x5D-\\x7E]|\\\\[\\x21-\\x7E])*\"@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+    },
+    {
+      "$comment": "Dot-atom local-part @ domain-literal",
+      "pattern": "^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@\\[(?:[\\x21-\\x5A\\x5E-\\x7E]|\\\\[\\x21-\\x7E])*\\]$"
+    },
+    {
+      "$comment": "Quoted string local-part @ domain-literal",
+      "pattern": "^\"(?:[\\x21\\x23-\\x5B\\x5D-\\x7E]|\\\\[\\x21-\\x7E])*\"@\\[(?:[\\x21-\\x5A\\x5E-\\x7E]|\\\\[\\x21-\\x7E])*\\]$"
+    }
+  ],
+  "not": {
+    "anyOf": [
+      {
+        "$comment": "Reject bare IPv4 addresses without brackets",
+        "pattern": "^[^@]+@\\d+\\.\\d+\\.\\d+\\.\\d+$"
+      },
+      {
+        "$comment": "Reject IPv6 addresses without brackets",
+        "pattern": "^[^@]+@[0-9a-fA-F:]+$"
+      },
+      {
+        "$comment": "Reject domains with numeric-only TLD",
+        "pattern": "^[^@]+@[^@]+\\.\\d+$"
+      },
+      {
+        "$comment": "Reject single-quote delimited local-parts (only double-quotes allowed)",
+        "pattern": "^'[^']*'@"
+      }
+    ]
+  }
+}
