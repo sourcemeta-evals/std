@@ -1,0 +1,294 @@
+{
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../../schemas/iso/datetime/2019/duration-calendar-basic.json",
+  "tests": [
+    {
+      "data": "P20230101",
+      "valid": true
+    },
+    {
+      "data": "P20230115",
+      "valid": true
+    },
+    {
+      "data": "P20230131",
+      "valid": true
+    },
+    {
+      "data": "P20230201",
+      "valid": true
+    },
+    {
+      "data": "P20230215",
+      "valid": true
+    },
+    {
+      "data": "P20230228",
+      "valid": true
+    },
+    {
+      "data": "P20230229",
+      "valid": true
+    },
+    {
+      "data": "P20230301",
+      "valid": true
+    },
+    {
+      "data": "P20230315",
+      "valid": true
+    },
+    {
+      "data": "P20230331",
+      "valid": true
+    },
+    {
+      "data": "P20230401",
+      "valid": true
+    },
+    {
+      "data": "P20230415",
+      "valid": true
+    },
+    {
+      "data": "P20230430",
+      "valid": true
+    },
+    {
+      "data": "P20230501",
+      "valid": true
+    },
+    {
+      "data": "P20230515",
+      "valid": true
+    },
+    {
+      "data": "P20230531",
+      "valid": true
+    },
+    {
+      "data": "P20230601",
+      "valid": true
+    },
+    {
+      "data": "P20230615",
+      "valid": true
+    },
+    {
+      "data": "P20230630",
+      "valid": true
+    },
+    {
+      "data": "P20230701",
+      "valid": true
+    },
+    {
+      "data": "P20230715",
+      "valid": true
+    },
+    {
+      "data": "P20230731",
+      "valid": true
+    },
+    {
+      "data": "P20230801",
+      "valid": true
+    },
+    {
+      "data": "P20230815",
+      "valid": true
+    },
+    {
+      "data": "P20230831",
+      "valid": true
+    },
+    {
+      "data": "P20230901",
+      "valid": true
+    },
+    {
+      "data": "P20230915",
+      "valid": true
+    },
+    {
+      "data": "P20230930",
+      "valid": true
+    },
+    {
+      "data": "P20231001",
+      "valid": true
+    },
+    {
+      "data": "P20231015",
+      "valid": true
+    },
+    {
+      "data": "P20231031",
+      "valid": true
+    },
+    {
+      "data": "P20231101",
+      "valid": true
+    },
+    {
+      "data": "P20231115",
+      "valid": true
+    },
+    {
+      "data": "P20231130",
+      "valid": true
+    },
+    {
+      "data": "P20231201",
+      "valid": true
+    },
+    {
+      "data": "P20231215",
+      "valid": true
+    },
+    {
+      "data": "P20231231",
+      "valid": true
+    },
+    {
+      "data": "P00010101",
+      "valid": true
+    },
+    {
+      "data": "P99991231",
+      "valid": true
+    },
+    {
+      "data": "P20230230",
+      "valid": false
+    },
+    {
+      "data": "P20230231",
+      "valid": false
+    },
+    {
+      "data": "P20230431",
+      "valid": false
+    },
+    {
+      "data": "P20230631",
+      "valid": false
+    },
+    {
+      "data": "P20230931",
+      "valid": false
+    },
+    {
+      "data": "P20231131",
+      "valid": false
+    },
+    {
+      "data": "P20230001",
+      "valid": false
+    },
+    {
+      "data": "P20231301",
+      "valid": false
+    },
+    {
+      "data": "P20230100",
+      "valid": false
+    },
+    {
+      "data": "P20230132",
+      "valid": false
+    },
+    {
+      "data": "P20230332",
+      "valid": false
+    },
+    {
+      "data": "P20230532",
+      "valid": false
+    },
+    {
+      "data": "P20230732",
+      "valid": false
+    },
+    {
+      "data": "P20230832",
+      "valid": false
+    },
+    {
+      "data": "P20231032",
+      "valid": false
+    },
+    {
+      "data": "P20231232",
+      "valid": false
+    },
+    {
+      "data": "P2023-01-31",
+      "valid": false
+    },
+    {
+      "data": "20230131",
+      "valid": false
+    },
+    {
+      "data": "P2023131",
+      "valid": false
+    },
+    {
+      "data": "P202301-31",
+      "valid": false
+    },
+    {
+      "data": "P23-01-31",
+      "valid": false
+    },
+    {
+      "data": "P2023/01/31",
+      "valid": false
+    },
+    {
+      "data": "P20230131T120000",
+      "valid": false
+    },
+    {
+      "data": "",
+      "valid": false
+    },
+    {
+      "data": "P",
+      "valid": false
+    },
+    {
+      "data": "P2023",
+      "valid": false
+    },
+    {
+      "data": "P202301",
+      "valid": false
+    },
+    {
+      "data": null,
+      "valid": false
+    },
+    {
+      "data": true,
+      "valid": false
+    },
+    {
+      "data": false,
+      "valid": false
+    },
+    {
+      "data": 20230131,
+      "valid": false
+    },
+    {
+      "data": [],
+      "valid": false
+    },
+    {
+      "data": {},
+      "valid": false
+    }
+  ]
+}

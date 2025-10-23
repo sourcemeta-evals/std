@@ -1,0 +1,294 @@
+{
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../../schemas/iso/datetime/2019/duration-calendar-extended.json",
+  "tests": [
+    {
+      "data": "P2023-01-01",
+      "valid": true
+    },
+    {
+      "data": "P2023-01-15",
+      "valid": true
+    },
+    {
+      "data": "P2023-01-31",
+      "valid": true
+    },
+    {
+      "data": "P2023-02-01",
+      "valid": true
+    },
+    {
+      "data": "P2023-02-15",
+      "valid": true
+    },
+    {
+      "data": "P2023-02-28",
+      "valid": true
+    },
+    {
+      "data": "P2023-02-29",
+      "valid": true
+    },
+    {
+      "data": "P2023-03-01",
+      "valid": true
+    },
+    {
+      "data": "P2023-03-15",
+      "valid": true
+    },
+    {
+      "data": "P2023-03-31",
+      "valid": true
+    },
+    {
+      "data": "P2023-04-01",
+      "valid": true
+    },
+    {
+      "data": "P2023-04-15",
+      "valid": true
+    },
+    {
+      "data": "P2023-04-30",
+      "valid": true
+    },
+    {
+      "data": "P2023-05-01",
+      "valid": true
+    },
+    {
+      "data": "P2023-05-15",
+      "valid": true
+    },
+    {
+      "data": "P2023-05-31",
+      "valid": true
+    },
+    {
+      "data": "P2023-06-01",
+      "valid": true
+    },
+    {
+      "data": "P2023-06-15",
+      "valid": true
+    },
+    {
+      "data": "P2023-06-30",
+      "valid": true
+    },
+    {
+      "data": "P2023-07-01",
+      "valid": true
+    },
+    {
+      "data": "P2023-07-15",
+      "valid": true
+    },
+    {
+      "data": "P2023-07-31",
+      "valid": true
+    },
+    {
+      "data": "P2023-08-01",
+      "valid": true
+    },
+    {
+      "data": "P2023-08-15",
+      "valid": true
+    },
+    {
+      "data": "P2023-08-31",
+      "valid": true
+    },
+    {
+      "data": "P2023-09-01",
+      "valid": true
+    },
+    {
+      "data": "P2023-09-15",
+      "valid": true
+    },
+    {
+      "data": "P2023-09-30",
+      "valid": true
+    },
+    {
+      "data": "P2023-10-01",
+      "valid": true
+    },
+    {
+      "data": "P2023-10-15",
+      "valid": true
+    },
+    {
+      "data": "P2023-10-31",
+      "valid": true
+    },
+    {
+      "data": "P2023-11-01",
+      "valid": true
+    },
+    {
+      "data": "P2023-11-15",
+      "valid": true
+    },
+    {
+      "data": "P2023-11-30",
+      "valid": true
+    },
+    {
+      "data": "P2023-12-01",
+      "valid": true
+    },
+    {
+      "data": "P2023-12-15",
+      "valid": true
+    },
+    {
+      "data": "P2023-12-31",
+      "valid": true
+    },
+    {
+      "data": "P0001-01-01",
+      "valid": true
+    },
+    {
+      "data": "P9999-12-31",
+      "valid": true
+    },
+    {
+      "data": "P2023-02-30",
+      "valid": false
+    },
+    {
+      "data": "P2023-02-31",
+      "valid": false
+    },
+    {
+      "data": "P2023-04-31",
+      "valid": false
+    },
+    {
+      "data": "P2023-06-31",
+      "valid": false
+    },
+    {
+      "data": "P2023-09-31",
+      "valid": false
+    },
+    {
+      "data": "P2023-11-31",
+      "valid": false
+    },
+    {
+      "data": "P2023-00-01",
+      "valid": false
+    },
+    {
+      "data": "P2023-13-01",
+      "valid": false
+    },
+    {
+      "data": "P2023-01-00",
+      "valid": false
+    },
+    {
+      "data": "P2023-01-32",
+      "valid": false
+    },
+    {
+      "data": "P2023-03-32",
+      "valid": false
+    },
+    {
+      "data": "P2023-05-32",
+      "valid": false
+    },
+    {
+      "data": "P2023-07-32",
+      "valid": false
+    },
+    {
+      "data": "P2023-08-32",
+      "valid": false
+    },
+    {
+      "data": "P2023-10-32",
+      "valid": false
+    },
+    {
+      "data": "P2023-12-32",
+      "valid": false
+    },
+    {
+      "data": "P20230131",
+      "valid": false
+    },
+    {
+      "data": "2023-01-31",
+      "valid": false
+    },
+    {
+      "data": "P2023-1-31",
+      "valid": false
+    },
+    {
+      "data": "P2023-01-1",
+      "valid": false
+    },
+    {
+      "data": "P23-01-31",
+      "valid": false
+    },
+    {
+      "data": "P2023/01/31",
+      "valid": false
+    },
+    {
+      "data": "P2023-01-31T12:00:00",
+      "valid": false
+    },
+    {
+      "data": "",
+      "valid": false
+    },
+    {
+      "data": "P",
+      "valid": false
+    },
+    {
+      "data": "P2023",
+      "valid": false
+    },
+    {
+      "data": "P2023-01",
+      "valid": false
+    },
+    {
+      "data": null,
+      "valid": false
+    },
+    {
+      "data": true,
+      "valid": false
+    },
+    {
+      "data": false,
+      "valid": false
+    },
+    {
+      "data": 20230131,
+      "valid": false
+    },
+    {
+      "data": [],
+      "valid": false
+    },
+    {
+      "data": {},
+      "valid": false
+    }
+  ]
+}
