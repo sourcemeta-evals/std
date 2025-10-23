@@ -1,0 +1,236 @@
+{
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../../schemas/iso/datetime/2019/duration-calendar-extended.json",
+  "tests": [
+    {
+      "description": "Valid: Year only",
+      "data": "P1Y",
+      "valid": true
+    },
+    {
+      "description": "Valid: Month only",
+      "data": "P2M",
+      "valid": true
+    },
+    {
+      "description": "Valid: Day only",
+      "data": "P3D",
+      "valid": true
+    },
+    {
+      "description": "Valid: Year and month",
+      "data": "P1Y2M",
+      "valid": true
+    },
+    {
+      "description": "Valid: Year and day",
+      "data": "P1Y3D",
+      "valid": true
+    },
+    {
+      "description": "Valid: Month and day",
+      "data": "P2M15D",
+      "valid": true
+    },
+    {
+      "description": "Valid: Year, month, and day",
+      "data": "P1Y2M15D",
+      "valid": true
+    },
+    {
+      "description": "Valid: January with 31 days",
+      "data": "P1M31D",
+      "valid": true
+    },
+    {
+      "description": "Valid: February with 29 days",
+      "data": "P2M29D",
+      "valid": true
+    },
+    {
+      "description": "Valid: March with 31 days",
+      "data": "P3M31D",
+      "valid": true
+    },
+    {
+      "description": "Valid: April with 30 days",
+      "data": "P4M30D",
+      "valid": true
+    },
+    {
+      "description": "Valid: May with 31 days",
+      "data": "P5M31D",
+      "valid": true
+    },
+    {
+      "description": "Valid: June with 30 days",
+      "data": "P6M30D",
+      "valid": true
+    },
+    {
+      "description": "Valid: July with 31 days",
+      "data": "P7M31D",
+      "valid": true
+    },
+    {
+      "description": "Valid: August with 31 days",
+      "data": "P8M31D",
+      "valid": true
+    },
+    {
+      "description": "Valid: September with 30 days",
+      "data": "P9M30D",
+      "valid": true
+    },
+    {
+      "description": "Valid: October with 31 days",
+      "data": "P10M31D",
+      "valid": true
+    },
+    {
+      "description": "Valid: November with 30 days",
+      "data": "P11M30D",
+      "valid": true
+    },
+    {
+      "description": "Valid: December with 31 days",
+      "data": "P12M31D",
+      "valid": true
+    },
+    {
+      "description": "Valid: February with 1 day",
+      "data": "P2M1D",
+      "valid": true
+    },
+    {
+      "description": "Valid: April with 1 day",
+      "data": "P4M1D",
+      "valid": true
+    },
+    {
+      "description": "Invalid: Empty duration",
+      "data": "P",
+      "valid": false
+    },
+    {
+      "description": "Invalid: February with 30 days",
+      "data": "P2M30D",
+      "valid": false
+    },
+    {
+      "description": "Invalid: February with 31 days",
+      "data": "P2M31D",
+      "valid": false
+    },
+    {
+      "description": "Invalid: April with 31 days",
+      "data": "P4M31D",
+      "valid": false
+    },
+    {
+      "description": "Invalid: June with 31 days",
+      "data": "P6M31D",
+      "valid": false
+    },
+    {
+      "description": "Invalid: September with 31 days",
+      "data": "P9M31D",
+      "valid": false
+    },
+    {
+      "description": "Invalid: November with 31 days",
+      "data": "P11M31D",
+      "valid": false
+    },
+    {
+      "description": "Invalid: January with 32 days",
+      "data": "P1M32D",
+      "valid": false
+    },
+    {
+      "description": "Invalid: March with 32 days",
+      "data": "P3M32D",
+      "valid": false
+    },
+    {
+      "description": "Invalid: May with 32 days",
+      "data": "P5M32D",
+      "valid": false
+    },
+    {
+      "description": "Invalid: July with 32 days",
+      "data": "P7M32D",
+      "valid": false
+    },
+    {
+      "description": "Invalid: August with 32 days",
+      "data": "P8M32D",
+      "valid": false
+    },
+    {
+      "description": "Invalid: October with 32 days",
+      "data": "P10M32D",
+      "valid": false
+    },
+    {
+      "description": "Invalid: December with 32 days",
+      "data": "P12M32D",
+      "valid": false
+    },
+    {
+      "description": "Invalid: No P prefix",
+      "data": "1Y2M3D",
+      "valid": false
+    },
+    {
+      "description": "Invalid: Lowercase p",
+      "data": "p1y2m3d",
+      "valid": false
+    },
+    {
+      "description": "Invalid: With time component",
+      "data": "P1Y2M3DT4H",
+      "valid": false
+    },
+    {
+      "description": "Valid: Year with month 1 and day 15",
+      "data": "P1Y1M15D",
+      "valid": true
+    },
+    {
+      "description": "Valid: Year with February and 28 days",
+      "data": "P1Y2M28D",
+      "valid": true
+    },
+    {
+      "description": "Invalid: Year with February and 30 days",
+      "data": "P1Y2M30D",
+      "valid": false
+    },
+    {
+      "description": "Invalid: Year with April and 31 days",
+      "data": "P1Y4M31D",
+      "valid": false
+    },
+    {
+      "description": "Valid: Large year value",
+      "data": "P100Y",
+      "valid": true
+    },
+    {
+      "description": "Valid: Large day value without month",
+      "data": "P365D",
+      "valid": true
+    },
+    {
+      "description": "Invalid: Month 0",
+      "data": "P0M15D",
+      "valid": false
+    },
+    {
+      "description": "Invalid: Day 0",
+      "data": "P1M0D",
+      "valid": false
+    }
+  ]
+}
