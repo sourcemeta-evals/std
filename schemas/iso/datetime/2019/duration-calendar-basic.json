@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ISO 8601-1:2019 Calendar Duration (Basic Format)",
+  "description": "A duration expressed in years, months, and days using the basic format",
+  "$comment": "https://www.iso.org/standard/70907.html",
+  "examples": [ "P1Y", "P2M", "P15D", "P1Y2M15D", "P0Y0M1D", "P1Y0M0D" ],
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "type": "string",
+  "allOf": [
+    {
+      "$comment": "Basic format: P[n]Y[n]M[n]D - at least one component must be present",
+      "pattern": "^P(\\d+Y)?(\\d+M)?(\\d+D)?$"
+    },
+    {
+      "$comment": "At least one component (Y, M, or D) must be present",
+      "pattern": "^P.*[YMD]"
+    }
+  ],
+  "not": {
+    "anyOf": [
+      {
+        "$comment": "Prevent invalid month/day combinations - months 01-12 only",
+        "pattern": "^P(\\d+Y)?(1[3-9]|[2-9]\\d|\\d{3,})M"
+      },
+      {
+        "$comment": "Prevent February with more than 29 days (ignoring leap year validation)",
+        "pattern": "^P(\\d+Y)?2M(3[0-9]|[4-9]\\d|\\d{3,})D"
+      },
+      {
+        "$comment": "Prevent April (month 4) with more than 30 days",
+        "pattern": "^P(\\d+Y)?4M(3[1-9]|[4-9]\\d|\\d{3,})D"
+      },
+      {
+        "$comment": "Prevent June (month 6) with more than 30 days",
+        "pattern": "^P(\\d+Y)?6M(3[1-9]|[4-9]\\d|\\d{3,})D"
+      },
+      {
+        "$comment": "Prevent September (month 9) with more than 30 days",
+        "pattern": "^P(\\d+Y)?9M(3[1-9]|[4-9]\\d|\\d{3,})D"
+      },
+      {
+        "$comment": "Prevent November (month 11) with more than 30 days",
+        "pattern": "^P(\\d+Y)?11M(3[1-9]|[4-9]\\d|\\d{3,})D"
+      },
+      {
+        "$comment": "Prevent any month with more than 31 days",
+        "pattern": "^P(\\d+Y)?(\\d+M)?(3[2-9]|[4-9]\\d|\\d{3,})D"
+      }
+    ]
+  }
+}
