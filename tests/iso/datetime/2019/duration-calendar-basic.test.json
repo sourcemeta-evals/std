@@ -1,0 +1,186 @@
+{
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../../schemas/iso/datetime/2019/duration-calendar-basic.json",
+  "tests": [
+    {
+      "description": "Valid duration with 1 year, 1 month, 1 day",
+      "data": "P0001Y01M01D",
+      "valid": true
+    },
+    {
+      "description": "Valid duration with 0 years, 12 months, 31 days",
+      "data": "P0000Y12M31D",
+      "valid": true
+    },
+    {
+      "description": "Valid duration with 10 years, 6 months, 15 days",
+      "data": "P0010Y06M15D",
+      "valid": true
+    },
+    {
+      "description": "Valid duration with all zeros",
+      "data": "P0000Y00M00D",
+      "valid": true
+    },
+    {
+      "description": "Valid duration - January with 31 days",
+      "data": "P0001Y01M31D",
+      "valid": true
+    },
+    {
+      "description": "Valid duration - February with 28 days",
+      "data": "P0001Y02M28D",
+      "valid": true
+    },
+    {
+      "description": "Valid duration - March with 31 days",
+      "data": "P0001Y03M31D",
+      "valid": true
+    },
+    {
+      "description": "Valid duration - April with 30 days",
+      "data": "P0001Y04M30D",
+      "valid": true
+    },
+    {
+      "description": "Valid duration - May with 31 days",
+      "data": "P0001Y05M31D",
+      "valid": true
+    },
+    {
+      "description": "Valid duration - June with 30 days",
+      "data": "P0001Y06M30D",
+      "valid": true
+    },
+    {
+      "description": "Valid duration - July with 31 days",
+      "data": "P0001Y07M31D",
+      "valid": true
+    },
+    {
+      "description": "Valid duration - August with 31 days",
+      "data": "P0001Y08M31D",
+      "valid": true
+    },
+    {
+      "description": "Valid duration - September with 30 days",
+      "data": "P0001Y09M30D",
+      "valid": true
+    },
+    {
+      "description": "Valid duration - October with 31 days",
+      "data": "P0001Y10M31D",
+      "valid": true
+    },
+    {
+      "description": "Valid duration - November with 30 days",
+      "data": "P0001Y11M30D",
+      "valid": true
+    },
+    {
+      "description": "Valid duration - December with 31 days",
+      "data": "P0001Y12M31D",
+      "valid": true
+    },
+    {
+      "description": "Invalid - February with 29 days (non-leap year)",
+      "data": "P0001Y02M29D",
+      "valid": false
+    },
+    {
+      "description": "Invalid - February with 30 days",
+      "data": "P0001Y02M30D",
+      "valid": false
+    },
+    {
+      "description": "Invalid - February with 31 days",
+      "data": "P0001Y02M31D",
+      "valid": false
+    },
+    {
+      "description": "Invalid - April with 31 days",
+      "data": "P0001Y04M31D",
+      "valid": false
+    },
+    {
+      "description": "Invalid - June with 31 days",
+      "data": "P0001Y06M31D",
+      "valid": false
+    },
+    {
+      "description": "Invalid - September with 31 days",
+      "data": "P0001Y09M31D",
+      "valid": false
+    },
+    {
+      "description": "Invalid - November with 31 days",
+      "data": "P0001Y11M31D",
+      "valid": false
+    },
+    {
+      "description": "Invalid - Missing P prefix",
+      "data": "0001Y01M01D",
+      "valid": false
+    },
+    {
+      "description": "Invalid - Extended format instead of basic",
+      "data": "P0001-01-01",
+      "valid": false
+    },
+    {
+      "description": "Invalid - Wrong number of year digits",
+      "data": "P001Y01M01D",
+      "valid": false
+    },
+    {
+      "description": "Invalid - Wrong number of month digits",
+      "data": "P0001Y1M01D",
+      "valid": false
+    },
+    {
+      "description": "Invalid - Wrong number of day digits",
+      "data": "P0001Y01M1D",
+      "valid": false
+    },
+    {
+      "description": "Invalid - Missing Y designator",
+      "data": "P000101M01D",
+      "valid": false
+    },
+    {
+      "description": "Invalid - Missing M designator",
+      "data": "P0001Y0101D",
+      "valid": false
+    },
+    {
+      "description": "Invalid - Missing D designator",
+      "data": "P0001Y01M01",
+      "valid": false
+    },
+    {
+      "description": "Invalid - Empty string",
+      "data": "",
+      "valid": false
+    },
+    {
+      "description": "Invalid - Just P",
+      "data": "P",
+      "valid": false
+    },
+    {
+      "description": "Invalid - Lowercase letters",
+      "data": "p0001y01m01d",
+      "valid": false
+    },
+    {
+      "description": "Invalid - Negative values",
+      "data": "P-001Y01M01D",
+      "valid": false
+    },
+    {
+      "description": "Invalid - Decimal values",
+      "data": "P0001.5Y01M01D",
+      "valid": false
+    }
+  ]
+}
