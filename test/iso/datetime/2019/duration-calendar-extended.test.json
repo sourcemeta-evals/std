@@ -281,6 +281,61 @@
       "description": "Invalid - second without leading zero (single digit)",
       "data": "P0000-01-01T00:00:1",
       "valid": false
+    },
+    {
+      "description": "Invalid - February 30th (month-day combination)",
+      "data": "P0000-02-30T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - February 31st (month-day combination)",
+      "data": "P0000-02-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - April 31st (month-day combination)",
+      "data": "P0000-04-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - June 31st (month-day combination)",
+      "data": "P0000-06-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - September 31st (month-day combination)",
+      "data": "P0000-09-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - November 31st (month-day combination)",
+      "data": "P0000-11-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Valid - February 29th (leap year consideration left to consumer)",
+      "data": "P0000-02-29T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - April 30th (maximum valid day for April)",
+      "data": "P0000-04-30T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - June 30th (maximum valid day for June)",
+      "data": "P0000-06-30T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - September 30th (maximum valid day for September)",
+      "data": "P0000-09-30T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - November 30th (maximum valid day for November)",
+      "data": "P0000-11-30T00:00:00",
+      "valid": true
     }
   ]
 }
