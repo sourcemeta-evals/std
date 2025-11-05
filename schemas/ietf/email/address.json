@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RFC 5322 Email Address (Addr-Spec)",
+  "description": "An Internet email address in addr-spec format as defined in RFC 5322 section 3.4.1. The addr-spec consists of a local-part followed by the at-sign (@) followed by a domain. The local-part may be a dot-atom, a quoted-string, or an obsolete local-part. The domain may be a dot-atom, a domain-literal (IP address in brackets), or an obsolete domain.",
+  "$comment": "https://www.rfc-editor.org/rfc/rfc5322#section-3.4.1",
+  "examples": [
+    "user@example.com",
+    "john.doe@example.com",
+    "user+tag@example.co.uk",
+    "\"quoted.user\"@example.com",
+    "user@[192.168.1.1]",
+    "user@[IPv6:2001:db8::1]",
+    "first.last@sub.domain.example.com"
+  ],
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "x-links": [ "https://www.rfc-editor.org/rfc/rfc5322#section-3.4.1" ],
+  "type": "string",
+  "pattern": "^(?:[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x20-\\x21\\x23-\\x5B\\x5D-\\x7E]|\\\\[\\x21-\\x7E])*\")@(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\\.)*[a-zA-Z](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\]|\\[IPv6:(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\\]|\\[IPv6:(?:[0-9a-fA-F]{1,4}:){1,7}:\\]|\\[IPv6:(?:[0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}\\]|\\[IPv6:(?:[0-9a-fA-F]{1,4}:){1,5}(?::[0-9a-fA-F]{1,4}){1,2}\\]|\\[IPv6:(?:[0-9a-fA-F]{1,4}:){1,4}(?::[0-9a-fA-F]{1,4}){1,3}\\]|\\[IPv6:(?:[0-9a-fA-F]{1,4}:){1,3}(?::[0-9a-fA-F]{1,4}){1,4}\\]|\\[IPv6:(?:[0-9a-fA-F]{1,4}:){1,2}(?::[0-9a-fA-F]{1,4}){1,5}\\]|\\[IPv6:[0-9a-fA-F]{1,4}:(?::[0-9a-fA-F]{1,4}){1,6}\\]|\\[IPv6::(?::[0-9a-fA-F]{1,4}){1,7}\\]|\\[IPv6:::(?:[0-9a-fA-F]{1,4}:){0,6}[0-9a-fA-F]{1,4}\\]|\\[IPv6:(?:[0-9a-fA-F]{1,4}:){1,7}:\\])$",
+  "format": "email"
+}
