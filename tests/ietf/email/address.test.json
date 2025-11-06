@@ -1,0 +1,311 @@
+{
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../schemas/ietf/email/address.json",
+  "tests": [
+    {
+      "description": "Invalid type - number",
+      "data": 123,
+      "valid": false
+    },
+    {
+      "description": "Invalid type - boolean",
+      "data": true,
+      "valid": false
+    },
+    {
+      "description": "Invalid type - null",
+      "data": null,
+      "valid": false
+    },
+    {
+      "description": "Invalid type - array",
+      "data": [],
+      "valid": false
+    },
+    {
+      "description": "Invalid type - object",
+      "data": {},
+      "valid": false
+    },
+    {
+      "description": "Valid - simple email",
+      "data": "user@example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - email with dot in local part",
+      "data": "john.doe@example.org",
+      "valid": true
+    },
+    {
+      "description": "Valid - email with plus sign",
+      "data": "admin+tag@mail.example.net",
+      "valid": true
+    },
+    {
+      "description": "Valid - email with all allowed atext characters",
+      "data": "user!#$%&'*+-/=?^_`{|}~@example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - quoted string local part with @",
+      "data": "\"user@name\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - quoted string with spaces",
+      "data": "\"john doe\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - quoted string with escaped quote",
+      "data": "\"quoted\\\"string\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - quoted string with escaped backslash",
+      "data": "\"back\\\\slash\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - domain literal with IPv4",
+      "data": "user@[192.168.1.1]",
+      "valid": true
+    },
+    {
+      "description": "Valid - domain literal with IPv6",
+      "data": "user@[IPv6:2001:db8::1]",
+      "valid": true
+    },
+    {
+      "description": "Valid - subdomain",
+      "data": "user@mail.example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - multiple subdomains",
+      "data": "user@a.b.c.example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - numeric domain",
+      "data": "user@123.456.789.012",
+      "valid": true
+    },
+    {
+      "description": "Valid - single character local part",
+      "data": "a@example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - single character domain label",
+      "data": "user@a.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - hyphen in domain",
+      "data": "user@my-domain.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - numbers in local part",
+      "data": "user123@example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - numbers in domain",
+      "data": "user@example123.com",
+      "valid": true
+    },
+    {
+      "description": "Invalid - missing @",
+      "data": "userexample.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - multiple @",
+      "data": "user@name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - empty local part",
+      "data": "@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - empty domain",
+      "data": "user@",
+      "valid": false
+    },
+    {
+      "description": "Invalid - empty string",
+      "data": "",
+      "valid": false
+    },
+    {
+      "description": "Invalid - space in local part",
+      "data": "user name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - space in domain",
+      "data": "user@example .com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - leading dot in local part",
+      "data": ".user@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - trailing dot in local part",
+      "data": "user.@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - consecutive dots in local part",
+      "data": "user..name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - leading dot in domain",
+      "data": "user@.example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - trailing dot in domain",
+      "data": "user@example.com.",
+      "valid": false
+    },
+    {
+      "description": "Invalid - consecutive dots in domain",
+      "data": "user@example..com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - special character in domain",
+      "data": "user@exam ple.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - unquoted special character in local part",
+      "data": "user name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - unclosed quoted string",
+      "data": "\"user@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - unescaped quote in quoted string",
+      "data": "\"user\"name\"@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - domain starting with hyphen",
+      "data": "user@-example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - domain ending with hyphen",
+      "data": "user@example-.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - unclosed domain literal",
+      "data": "user@[192.168.1.1",
+      "valid": false
+    },
+    {
+      "description": "Invalid - domain literal without closing bracket",
+      "data": "user@192.168.1.1]",
+      "valid": false
+    },
+    {
+      "description": "Valid - uppercase letters",
+      "data": "USER@EXAMPLE.COM",
+      "valid": true
+    },
+    {
+      "description": "Valid - mixed case",
+      "data": "User@Example.Com",
+      "valid": true
+    },
+    {
+      "description": "Invalid - parentheses in unquoted local part",
+      "data": "user(comment)@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - angle brackets",
+      "data": "<user@example.com>",
+      "valid": false
+    },
+    {
+      "description": "Invalid - comma",
+      "data": "user,name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - semicolon",
+      "data": "user;name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid - colon in local part",
+      "data": "user:name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Valid - quoted string with comma",
+      "data": "\"user,name\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - quoted string with semicolon",
+      "data": "\"user;name\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - quoted string with colon",
+      "data": "\"user:name\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - quoted string with parentheses",
+      "data": "\"user(comment)\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - quoted string with angle brackets",
+      "data": "\"user<name>\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - quoted string with square brackets",
+      "data": "\"user[name]\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Invalid - backslash in unquoted local part",
+      "data": "user\\name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Valid - quoted string with backslash escape",
+      "data": "\"user\\\\name\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - long local part",
+      "data": "verylonglocalpartverylonglocalpartverylonglocalpart@example.com",
+      "valid": true
+    },
+    {
+      "description": "Valid - long domain",
+      "data": "user@verylongdomainverylongdomainverylongdomain.com",
+      "valid": true
+    }
+  ]
+}
