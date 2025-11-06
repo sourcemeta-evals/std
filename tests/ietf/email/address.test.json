@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../schemas/ietf/email/address.json",
+  "tests": [
+    {
+      "description": "A valid simple email address",
+      "data": "user@example.com",
+      "valid": true
+    },
+    {
+      "description": "A valid email with dots in local part",
+      "data": "john.doe@example.org",
+      "valid": true
+    },
+    {
+      "description": "A valid email with plus sign",
+      "data": "admin+tag@mail.example.net",
+      "valid": true
+    },
+    {
+      "description": "A valid email with hyphen in domain",
+      "data": "user@my-domain.com",
+      "valid": true
+    },
+    {
+      "description": "A valid email with numbers",
+      "data": "user123@example456.com",
+      "valid": true
+    },
+    {
+      "description": "A valid email with underscore",
+      "data": "user_name@example.com",
+      "valid": true
+    },
+    {
+      "description": "A valid email with all special atext characters",
+      "data": "test!#$%&'*+/=?^_`{|}~@example.com",
+      "valid": true
+    },
+    {
+      "description": "A valid quoted string local part with space",
+      "data": "\"john doe\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "A valid quoted string with escaped quote",
+      "data": "\"john\\\"doe\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "A valid quoted string with escaped backslash",
+      "data": "\"john\\\\doe\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "A valid quoted string with @ symbol",
+      "data": "\"john@doe\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "A valid quoted string with consecutive dots",
+      "data": "\"john..doe\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "A valid domain literal with IPv4",
+      "data": "user@[192.168.1.1]",
+      "valid": true
+    },
+    {
+      "description": "A valid domain literal with text",
+      "data": "user@[mail.example.com]",
+      "valid": true
+    },
+    {
+      "description": "A valid single character local part",
+      "data": "a@example.com",
+      "valid": true
+    },
+    {
+      "description": "A valid single character domain label",
+      "data": "user@a.com",
+      "valid": true
+    },
+    {
+      "description": "A valid email with multiple domain labels",
+      "data": "user@mail.example.co.uk",
+      "valid": true
+    },
+    {
+      "description": "Invalid email without @",
+      "data": "userexample.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email with multiple @",
+      "data": "user@@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email without domain",
+      "data": "user@",
+      "valid": false
+    },
+    {
+      "description": "Invalid email without local part",
+      "data": "@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email with unquoted space",
+      "data": "user name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email with unquoted special character",
+      "data": "user<>@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email ending with dot in local part",
+      "data": "user.@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email starting with dot in local part",
+      "data": ".user@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email with consecutive dots in local part",
+      "data": "user..name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid domain starting with hyphen",
+      "data": "user@-example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid domain ending with hyphen",
+      "data": "user@example-.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid domain label ending with hyphen",
+      "data": "user@example-.co.uk",
+      "valid": false
+    },
+    {
+      "description": "Invalid empty quoted string",
+      "data": "\"\"@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid unclosed quoted string",
+      "data": "\"user@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid domain literal without closing bracket",
+      "data": "user@[192.168.1.1",
+      "valid": false
+    },
+    {
+      "description": "Invalid domain literal without opening bracket",
+      "data": "user@192.168.1.1]",
+      "valid": false
+    },
+    {
+      "description": "Invalid empty local part",
+      "data": "@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid empty domain",
+      "data": "user@",
+      "valid": false
+    }
+  ]
+}
