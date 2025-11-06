@@ -281,6 +281,101 @@
       "description": "Invalid - second without leading zero (single digit)",
       "data": "P0000-01-01T00:00:1",
       "valid": false
+    },
+    {
+      "description": "Invalid - February 30 (February only has 28/29 days)",
+      "data": "P0000-02-30T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - February 31 (February only has 28/29 days)",
+      "data": "P0000-02-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - April 31 (April only has 30 days)",
+      "data": "P0000-04-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - June 31 (June only has 30 days)",
+      "data": "P0000-06-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - September 31 (September only has 30 days)",
+      "data": "P0000-09-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - November 31 (November only has 30 days)",
+      "data": "P0000-11-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Valid - February 29 (allowed, leap year validation is consumer responsibility)",
+      "data": "P0000-02-29T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - February 28",
+      "data": "P0000-02-28T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - April 30",
+      "data": "P0000-04-30T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - June 30",
+      "data": "P0000-06-30T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - September 30",
+      "data": "P0000-09-30T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - November 30",
+      "data": "P0000-11-30T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - January 31",
+      "data": "P0000-01-31T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - March 31",
+      "data": "P0000-03-31T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - May 31",
+      "data": "P0000-05-31T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - July 31",
+      "data": "P0000-07-31T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - August 31",
+      "data": "P0000-08-31T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - October 31",
+      "data": "P0000-10-31T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - December 31",
+      "data": "P0000-12-31T00:00:00",
+      "valid": true
     }
   ]
 }
