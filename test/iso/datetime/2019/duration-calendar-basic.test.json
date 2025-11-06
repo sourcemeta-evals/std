@@ -281,6 +281,71 @@
       "description": "Invalid - second without leading zero (single digit)",
       "data": "P00000101T00001",
       "valid": false
+    },
+    {
+      "description": "Invalid - February 30 (invalid month/day combination)",
+      "data": "P00010230T000000",
+      "valid": false
+    },
+    {
+      "description": "Invalid - February 31 (invalid month/day combination)",
+      "data": "P00010231T000000",
+      "valid": false
+    },
+    {
+      "description": "Invalid - April 31 (invalid month/day combination)",
+      "data": "P00010431T000000",
+      "valid": false
+    },
+    {
+      "description": "Invalid - June 31 (invalid month/day combination)",
+      "data": "P00010631T000000",
+      "valid": false
+    },
+    {
+      "description": "Invalid - September 31 (invalid month/day combination)",
+      "data": "P00010931T000000",
+      "valid": false
+    },
+    {
+      "description": "Invalid - November 31 (invalid month/day combination)",
+      "data": "P00011131T000000",
+      "valid": false
+    },
+    {
+      "description": "Valid - February 29 (allowed, leap year validation excluded)",
+      "data": "P00010229T000000",
+      "valid": true
+    },
+    {
+      "description": "Valid - April 30 (valid month/day combination)",
+      "data": "P00010430T000000",
+      "valid": true
+    },
+    {
+      "description": "Valid - June 30 (valid month/day combination)",
+      "data": "P00010630T000000",
+      "valid": true
+    },
+    {
+      "description": "Valid - September 30 (valid month/day combination)",
+      "data": "P00010930T000000",
+      "valid": true
+    },
+    {
+      "description": "Valid - November 30 (valid month/day combination)",
+      "data": "P00011130T000000",
+      "valid": true
+    },
+    {
+      "description": "Invalid - February 30 with expanded year",
+      "data": "P+100000230T000000",
+      "valid": false
+    },
+    {
+      "description": "Invalid - April 31 with expanded year",
+      "data": "P-100000431T000000",
+      "valid": false
     }
   ]
 }
