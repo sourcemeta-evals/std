@@ -10,5 +10,37 @@
   ],
   "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
   "type": "string",
+  "allOf": [
+    {
+      "$comment": "Reject February with day 30 or 31",
+      "not": {
+        "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})-02-(?:30|31)T"
+      }
+    },
+    {
+      "$comment": "Reject April with day 31",
+      "not": {
+        "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})-04-31T"
+      }
+    },
+    {
+      "$comment": "Reject June with day 31",
+      "not": {
+        "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})-06-31T"
+      }
+    },
+    {
+      "$comment": "Reject September with day 31",
+      "not": {
+        "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})-09-31T"
+      }
+    },
+    {
+      "$comment": "Reject November with day 31",
+      "not": {
+        "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})-11-31T"
+      }
+    }
+  ],
   "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])T(?:[01][0-9]|2[0-3]):(?:[0-5][0-9]):(?:[0-5][0-9])$"
 }
