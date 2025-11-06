@@ -1,0 +1,262 @@
+{
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../schemas/ietf/email/address.json",
+  "tests": [
+    {
+      "data": "user@example.com",
+      "valid": true
+    },
+    {
+      "data": "john.doe@example.org",
+      "valid": true
+    },
+    {
+      "data": "test+tag@mail.example.net",
+      "valid": true
+    },
+    {
+      "data": "simple@example.com",
+      "valid": true
+    },
+    {
+      "data": "very.common@example.com",
+      "valid": true
+    },
+    {
+      "data": "disposable.style.email.with+symbol@example.com",
+      "valid": true
+    },
+    {
+      "data": "other.email-with-hyphen@example.com",
+      "valid": true
+    },
+    {
+      "data": "fully-qualified-domain@example.com",
+      "valid": true
+    },
+    {
+      "data": "user.name+tag+sorting@example.com",
+      "valid": true
+    },
+    {
+      "data": "x@example.com",
+      "valid": true
+    },
+    {
+      "data": "example-indeed@strange-example.com",
+      "valid": true
+    },
+    {
+      "data": "test@subdomain.example.com",
+      "valid": true
+    },
+    {
+      "data": "test@sub.domain.example.com",
+      "valid": true
+    },
+    {
+      "data": "user@localhost.localdomain",
+      "valid": true
+    },
+    {
+      "data": "user@example.co.uk",
+      "valid": true
+    },
+    {
+      "data": "test_underscore@example.com",
+      "valid": true
+    },
+    {
+      "data": "test-hyphen@example.com",
+      "valid": true
+    },
+    {
+      "data": "1234567890@example.com",
+      "valid": true
+    },
+    {
+      "data": "email@123.123.123.123",
+      "valid": false
+    },
+    {
+      "data": "_______@example.com",
+      "valid": true
+    },
+    {
+      "data": "email@example-one.com",
+      "valid": true
+    },
+    {
+      "data": "email@example.name",
+      "valid": true
+    },
+    {
+      "data": "email@example.museum",
+      "valid": true
+    },
+    {
+      "data": "email@example.co.jp",
+      "valid": true
+    },
+    {
+      "data": "firstname.lastname@example.com",
+      "valid": true
+    },
+    {
+      "data": "firstname+lastname@example.com",
+      "valid": true
+    },
+    {
+      "data": "email@subdomain.example.com",
+      "valid": true
+    },
+    {
+      "data": "1234567890@example.com",
+      "valid": true
+    },
+    {
+      "data": "email@example.web",
+      "valid": true
+    },
+    {
+      "data": "test!#$%&'*+/=?^_`{|}~@example.com",
+      "valid": true
+    },
+    {
+      "data": "plainaddress",
+      "valid": false
+    },
+    {
+      "data": "@no-local-part.com",
+      "valid": false
+    },
+    {
+      "data": "missing-domain@.com",
+      "valid": false
+    },
+    {
+      "data": "missing@domain",
+      "valid": false
+    },
+    {
+      "data": "two@@example.com",
+      "valid": false
+    },
+    {
+      "data": "dotdot..@example.com",
+      "valid": false
+    },
+    {
+      "data": ".leadingdot@example.com",
+      "valid": false
+    },
+    {
+      "data": "trailingdot.@example.com",
+      "valid": false
+    },
+    {
+      "data": "multiple@at@signs.com",
+      "valid": false
+    },
+    {
+      "data": "spaces in@example.com",
+      "valid": false
+    },
+    {
+      "data": "email@example..com",
+      "valid": false
+    },
+    {
+      "data": "email@-example.com",
+      "valid": false
+    },
+    {
+      "data": "email@example-.com",
+      "valid": false
+    },
+    {
+      "data": "email@example.com-",
+      "valid": false
+    },
+    {
+      "data": "email@.example.com",
+      "valid": false
+    },
+    {
+      "data": "email@example.com.",
+      "valid": false
+    },
+    {
+      "data": "email@example",
+      "valid": false
+    },
+    {
+      "data": "email@",
+      "valid": false
+    },
+    {
+      "data": "@example.com",
+      "valid": false
+    },
+    {
+      "data": "",
+      "valid": false
+    },
+    {
+      "data": "email @example.com",
+      "valid": false
+    },
+    {
+      "data": "email@ example.com",
+      "valid": false
+    },
+    {
+      "data": "email@example .com",
+      "valid": false
+    },
+    {
+      "data": "email@exam ple.com",
+      "valid": false
+    },
+    {
+      "data": "email..email@example.com",
+      "valid": false
+    },
+    {
+      "data": "email@111.222.333.44444",
+      "valid": false
+    },
+    {
+      "data": "email@example@example.com",
+      "valid": false
+    },
+    {
+      "data": "Abc..123@example.com",
+      "valid": false
+    },
+    {
+      "data": null,
+      "valid": false
+    },
+    {
+      "data": true,
+      "valid": false
+    },
+    {
+      "data": false,
+      "valid": false
+    },
+    {
+      "data": 123,
+      "valid": false
+    },
+    {
+      "data": [],
+      "valid": false
+    },
+    {
+      "data": {},
+      "valid": false
+    }
+  ]
+}
