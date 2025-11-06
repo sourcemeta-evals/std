@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RFC 5322 Email Address",
+  "description": "An Internet email address in addr-spec format as defined in RFC 5322 section 3.4.1. This schema validates the syntactic structure of email addresses including dot-atom and quoted-string forms for the local-part, and dot-atom and domain-literal forms for the domain.",
+  "$comment": "https://www.rfc-editor.org/rfc/rfc5322#section-3.4.1",
+  "examples": [
+    "user@example.com",
+    "john.doe@example.org",
+    "test+tag@mail.example.net",
+    "\"quoted.user\"@example.com",
+    "user@[192.168.1.1]",
+    "disposable.style.email.with+symbol@example.com",
+    "\"very.unusual.@.unusual.com\"@example.com",
+    "admin@mail.example.co.uk"
+  ],
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "type": "string",
+  "pattern": "^(?:[A-Za-z0-9!#$%&'*+\\-/=?^_`{|}~]+(?:\\.[A-Za-z0-9!#$%&'*+\\-/=?^_`{|}~]+)*|\"(?:[\\x20\\x21\\x23-\\x5B\\x5D-\\x7E]|\\\\[\\x09\\x20\\x21-\\x7E])*\")@(?:[A-Za-z0-9!#$%&'*+\\-/=?^_`{|}~]+(?:\\.[A-Za-z0-9!#$%&'*+\\-/=?^_`{|}~]+)*|\\[(?:[\\x21-\\x5A\\x5E-\\x7E]|\\\\[\\x09\\x20\\x21-\\x7E])*\\])$",
+  "format": "email"
+}
