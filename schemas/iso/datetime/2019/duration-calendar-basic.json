@@ -6,5 +6,33 @@
   "examples": [ "P00020110T223355", "P00010101T000000", "P00001231T235959" ],
   "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
   "type": "string",
+  "not": {
+    "anyOf": [
+      {
+        "description": "February cannot have day 30",
+        "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})0230T"
+      },
+      {
+        "description": "February cannot have day 31",
+        "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})0231T"
+      },
+      {
+        "description": "April cannot have day 31",
+        "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})0431T"
+      },
+      {
+        "description": "June cannot have day 31",
+        "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})0631T"
+      },
+      {
+        "description": "September cannot have day 31",
+        "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})0931T"
+      },
+      {
+        "description": "November cannot have day 31",
+        "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})1131T"
+      }
+    ]
+  },
   "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})(?:0[1-9]|1[0-2])(?:0[1-9]|[12][0-9]|3[01])T(?:[01][0-9]|2[0-3])(?:[0-5][0-9])(?:[0-5][0-9])$"
 }
