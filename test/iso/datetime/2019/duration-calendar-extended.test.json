@@ -281,6 +281,71 @@
       "description": "Invalid - second without leading zero (single digit)",
       "data": "P0000-01-01T00:00:1",
       "valid": false
+    },
+    {
+      "description": "Invalid - February 30 (February has max 29 days)",
+      "data": "P0000-02-30T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - February 31 (February has max 29 days)",
+      "data": "P0000-02-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - April 31 (April has only 30 days)",
+      "data": "P0000-04-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - June 31 (June has only 30 days)",
+      "data": "P0000-06-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - September 31 (September has only 30 days)",
+      "data": "P0000-09-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - November 31 (November has only 30 days)",
+      "data": "P0000-11-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Valid - February 29 (valid in leap years)",
+      "data": "P0000-02-29T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - April 30 (April has 30 days)",
+      "data": "P0000-04-30T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - June 30 (June has 30 days)",
+      "data": "P0000-06-30T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - September 30 (September has 30 days)",
+      "data": "P0000-09-30T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - November 30 (November has 30 days)",
+      "data": "P0000-11-30T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Invalid - February 30 with expanded year",
+      "data": "P+10000-02-30T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - April 31 with expanded year",
+      "data": "P-10000-04-31T00:00:00",
+      "valid": false
     }
   ]
 }
