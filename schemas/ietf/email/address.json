@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RFC 5322 Email Address (Addr-Spec)",
+  "description": "An Internet email address in addr-spec format as defined in RFC 5322 Section 3.4.1. The addr-spec is a specific Internet identifier that contains a locally interpreted string (local-part) followed by the at-sign character (@) followed by an Internet domain. This schema validates the syntactic structure including dot-atom and quoted-string forms for the local-part, and dot-atom and domain-literal forms for the domain.",
+  "$comment": "https://www.rfc-editor.org/rfc/rfc5322#section-3.4.1",
+  "examples": [
+    "user@example.com",
+    "john.doe@example.com",
+    "\"quoted.string\"@example.com",
+    "user+tag@example.com",
+    "user@[192.168.1.1]",
+    "admin@mail.example.org",
+    "test.email.with+symbol@example4u.net"
+  ],
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "type": "string",
+  "pattern": "^([a-zA-Z0-9!#$%&'*+\\-/=?^_`{|}~]+(\\.[a-zA-Z0-9!#$%&'*+\\-/=?^_`{|}~]+)*|\"([\\x21\\x23-\\x5B\\x5D-\\x7E]|\\\\[\\x21-\\x7E\\x20\\x09])*\")@([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?(\\.[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?)*|\\[[\\x21-\\x5A\\x5E-\\x7E]+\\])$"
+}
