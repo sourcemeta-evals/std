@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "RFC 5322 Email Address",
-  "description": "An Internet email address in addr-spec format as defined in RFC 5322 section 3.4.1. Supports dot-atom and quoted-string local-parts, dot-atom and domain-literal domains, CFWS (comments and folding whitespace), and obsolete syntax.",
+  "description": "An Internet email address in addr-spec format as defined in RFC 5322 section 3.4.1. Supports dot-atom and quoted-string local-parts, dot-atom and domain-literal domains, and CFWS (comments and folding whitespace). Enforces strict validation excluding obsolete syntax and requiring proper domain label formatting per RFC 1123.",
   "$comment": "https://www.rfc-editor.org/rfc/rfc5322#section-3.4.1",
   "examples": [
     "user@example.com",
