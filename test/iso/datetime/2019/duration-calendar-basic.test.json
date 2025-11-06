@@ -281,6 +281,61 @@
       "description": "Invalid - second without leading zero (single digit)",
       "data": "P00000101T00001",
       "valid": false
+    },
+    {
+      "description": "Invalid - February 30 (month 02 cannot have day 30)",
+      "data": "P00000230T000000",
+      "valid": false
+    },
+    {
+      "description": "Invalid - February 31 (month 02 cannot have day 31)",
+      "data": "P00000231T000000",
+      "valid": false
+    },
+    {
+      "description": "Invalid - April 31 (month 04 cannot have day 31)",
+      "data": "P00000431T000000",
+      "valid": false
+    },
+    {
+      "description": "Invalid - June 31 (month 06 cannot have day 31)",
+      "data": "P00000631T000000",
+      "valid": false
+    },
+    {
+      "description": "Invalid - September 31 (month 09 cannot have day 31)",
+      "data": "P00000931T000000",
+      "valid": false
+    },
+    {
+      "description": "Invalid - November 31 (month 11 cannot have day 31)",
+      "data": "P00001131T000000",
+      "valid": false
+    },
+    {
+      "description": "Valid - February 29 (allowed, leap year validation is consumer responsibility)",
+      "data": "P00000229T000000",
+      "valid": true
+    },
+    {
+      "description": "Valid - April 30 (month 04 can have day 30)",
+      "data": "P00000430T000000",
+      "valid": true
+    },
+    {
+      "description": "Valid - June 30 (month 06 can have day 30)",
+      "data": "P00000630T000000",
+      "valid": true
+    },
+    {
+      "description": "Valid - September 30 (month 09 can have day 30)",
+      "data": "P00000930T000000",
+      "valid": true
+    },
+    {
+      "description": "Valid - November 30 (month 11 can have day 30)",
+      "data": "P00001130T000000",
+      "valid": true
     }
   ]
 }
