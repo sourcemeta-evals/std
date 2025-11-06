@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RFC 5322 Email Address (Addr-Spec)",
+  "description": "An Internet email address in addr-spec format as defined in RFC 5322 section 3.4.1, consisting of a local-part followed by an at-sign (@) followed by a domain. The local-part can be a dot-atom, quoted-string, or obsolete format (word separated by dots). The domain can be a dot-atom, domain-literal (IP address in brackets), or obsolete format.",
+  "$comment": "https://www.rfc-editor.org/rfc/rfc5322#section-3.4.1",
+  "examples": [
+    "user@example.com",
+    "john.doe@mail.example.org",
+    "admin+tag@example.net",
+    "\"quoted string\"@example.com",
+    "user@[192.168.1.1]",
+    "test.email.with+symbol@example4u.net",
+    "user.\"quoted.part\"@example.com",
+    "\"very.unusual.@.unusual.com\"@example.com"
+  ],
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "type": "string",
+  "pattern": "^(?:(?:[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+|\"(?:[\\x01-\\x08\\x09\\x0b\\x0c\\x0e-\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")(?:\\.(?:[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+|\"(?:[\\x01-\\x08\\x09\\x0b\\x0c\\x0e-\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\"))*|\"(?:[\\x01-\\x08\\x09\\x0b\\x0c\\x0e-\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)+|[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)|\\[(?:(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)|[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]*[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x5c\\x5e-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])$",
+  "format": "email"
+}
