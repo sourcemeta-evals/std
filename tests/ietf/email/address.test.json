@@ -1,0 +1,278 @@
+{
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../schemas/ietf/email/address.json",
+  "tests": [
+    {
+      "data": "user@example.com",
+      "valid": true
+    },
+    {
+      "data": "john.doe@example.org",
+      "valid": true
+    },
+    {
+      "data": "test+tag@subdomain.example.com",
+      "valid": true
+    },
+    {
+      "data": "user123@test-domain.co.uk",
+      "valid": true
+    },
+    {
+      "data": "a@b.co",
+      "valid": true
+    },
+    {
+      "data": "test.email.with+symbol@example.com",
+      "valid": true
+    },
+    {
+      "data": "x@example.com",
+      "valid": true
+    },
+    {
+      "data": "example@s.example",
+      "valid": true
+    },
+    {
+      "data": "test@example-one.com",
+      "valid": true
+    },
+    {
+      "data": "test@example.name",
+      "valid": true
+    },
+    {
+      "data": "test@example.museum",
+      "valid": true
+    },
+    {
+      "data": "user_name@example.com",
+      "valid": true
+    },
+    {
+      "data": "user-name@example.com",
+      "valid": true
+    },
+    {
+      "data": "firstname.lastname@example.com",
+      "valid": true
+    },
+    {
+      "data": "email@123.123.123.123",
+      "valid": true
+    },
+    {
+      "data": "1234567890@example.com",
+      "valid": true
+    },
+    {
+      "data": "email@example-one.com",
+      "valid": true
+    },
+    {
+      "data": "_______@example.com",
+      "valid": true
+    },
+    {
+      "data": "email@example.name",
+      "valid": true
+    },
+    {
+      "data": "email@example.museum",
+      "valid": true
+    },
+    {
+      "data": "email@example.co.jp",
+      "valid": true
+    },
+    {
+      "data": "firstname+lastname@example.com",
+      "valid": true
+    },
+    {
+      "data": "email@[192.168.1.1]",
+      "valid": true
+    },
+    {
+      "data": "\"quoted.user\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "\"test@test\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "\"test\\\"test\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "\"test\\\\test\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "test@[IPv6:2001:db8::1]",
+      "valid": true
+    },
+    {
+      "data": "test@[general:some-text]",
+      "valid": true
+    },
+    {
+      "data": "user@[domain-literal]",
+      "valid": true
+    },
+    {
+      "data": "plainaddress",
+      "valid": false
+    },
+    {
+      "data": "@missinglocalpart.com",
+      "valid": false
+    },
+    {
+      "data": "missing@.com",
+      "valid": false
+    },
+    {
+      "data": "missing@domain",
+      "valid": true
+    },
+    {
+      "data": "missing.domain.com",
+      "valid": false
+    },
+    {
+      "data": "two@@example.com",
+      "valid": false
+    },
+    {
+      "data": "test@",
+      "valid": false
+    },
+    {
+      "data": "@example.com",
+      "valid": false
+    },
+    {
+      "data": "test..test@example.com",
+      "valid": false
+    },
+    {
+      "data": ".test@example.com",
+      "valid": false
+    },
+    {
+      "data": "test.@example.com",
+      "valid": false
+    },
+    {
+      "data": "test@example..com",
+      "valid": false
+    },
+    {
+      "data": "test@.example.com",
+      "valid": false
+    },
+    {
+      "data": "test@example.com.",
+      "valid": false
+    },
+    {
+      "data": "test@example",
+      "valid": true
+    },
+    {
+      "data": "test@-example.com",
+      "valid": false
+    },
+    {
+      "data": "test@example-.com",
+      "valid": false
+    },
+    {
+      "data": "test@exam ple.com",
+      "valid": false
+    },
+    {
+      "data": "test @example.com",
+      "valid": false
+    },
+    {
+      "data": "test@ example.com",
+      "valid": false
+    },
+    {
+      "data": "test@example .com",
+      "valid": false
+    },
+    {
+      "data": "test@[192.168.1.256]",
+      "valid": false
+    },
+    {
+      "data": "test@[192.168.1]",
+      "valid": false
+    },
+    {
+      "data": "test@[192.168.1.1.1]",
+      "valid": false
+    },
+    {
+      "data": "test@[]",
+      "valid": false
+    },
+    {
+      "data": "test@[",
+      "valid": false
+    },
+    {
+      "data": "test@]",
+      "valid": false
+    },
+    {
+      "data": "\"test@example.com",
+      "valid": false
+    },
+    {
+      "data": "test\"@example.com",
+      "valid": false
+    },
+    {
+      "data": "\"\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "test@example.c",
+      "valid": true
+    },
+    {
+      "data": "",
+      "valid": false
+    },
+    {
+      "data": null,
+      "valid": false
+    },
+    {
+      "data": true,
+      "valid": false
+    },
+    {
+      "data": false,
+      "valid": false
+    },
+    {
+      "data": 123,
+      "valid": false
+    },
+    {
+      "data": [],
+      "valid": false
+    },
+    {
+      "data": {},
+      "valid": false
+    }
+  ]
+}
