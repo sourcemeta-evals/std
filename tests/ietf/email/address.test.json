@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../schemas/ietf/email/address.json",
+  "tests": [
+    {
+      "description": "A simple email address with dot-atom local-part and domain",
+      "data": "user@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email address with dots in local-part",
+      "data": "john.doe@example.org",
+      "valid": true
+    },
+    {
+      "description": "Email address with plus sign in local-part",
+      "data": "admin+tag@mail.example.net",
+      "valid": true
+    },
+    {
+      "description": "Email address with underscore in local-part",
+      "data": "test_user@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email address with hyphen in local-part",
+      "data": "test-user@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email address with numbers in local-part",
+      "data": "user123@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email address with special characters in local-part",
+      "data": "user!#$%&'*+/=?^_`{|}~@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email address with quoted-string local-part",
+      "data": "\"quoted.string\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email address with quoted-string containing spaces",
+      "data": "\"john doe\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email address with quoted-string containing special characters",
+      "data": "\"user@host\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email address with escaped characters in quoted-string",
+      "data": "\"user\\\"name\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email address with domain literal (IPv4 address)",
+      "data": "user@[192.168.1.1]",
+      "valid": true
+    },
+    {
+      "description": "Email address with domain literal (IPv6-like format)",
+      "data": "user@[2001:db8::1]",
+      "valid": true
+    },
+    {
+      "description": "Email address with subdomain",
+      "data": "user@mail.example.com",
+      "valid": true
+    },
+    {
+      "description": "Email address with multiple subdomains",
+      "data": "user@mail.server.example.com",
+      "valid": true
+    },
+    {
+      "description": "Email address with country code TLD",
+      "data": "user@example.co.uk",
+      "valid": true
+    },
+    {
+      "description": "Email address with hyphen in domain",
+      "data": "user@my-domain.com",
+      "valid": true
+    },
+    {
+      "description": "Email address with numbers in domain",
+      "data": "user@example123.com",
+      "valid": true
+    },
+    {
+      "description": "Email address with single character local-part",
+      "data": "a@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email address with single character domain label",
+      "data": "user@a.com",
+      "valid": true
+    },
+    {
+      "description": "Invalid email address without at-sign",
+      "data": "userexample.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address with multiple at-signs",
+      "data": "user@example@com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address with empty local-part",
+      "data": "@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address with empty domain",
+      "data": "user@",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address with spaces in unquoted local-part",
+      "data": "john doe@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address with spaces in domain",
+      "data": "user@example .com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address starting with dot in local-part",
+      "data": ".user@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address ending with dot in local-part",
+      "data": "user.@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address with consecutive dots in local-part",
+      "data": "user..name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address with unquoted special character",
+      "data": "user name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address with domain starting with hyphen",
+      "data": "user@-example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address with domain ending with hyphen",
+      "data": "user@example-.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address with domain starting with dot",
+      "data": "user@.example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address with domain ending with dot",
+      "data": "user@example.com.",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address with consecutive dots in domain",
+      "data": "user@example..com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address with unclosed quoted-string",
+      "data": "\"user@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address with unclosed domain literal",
+      "data": "user@[192.168.1.1",
+      "valid": false
+    },
+    {
+      "description": "Invalid email address that is not a string",
+      "data": 12345,
+      "valid": false
+    },
+    {
+      "description": "Invalid email address that is null",
+      "data": null,
+      "valid": false
+    },
+    {
+      "description": "Invalid email address that is an empty string",
+      "data": "",
+      "valid": false
+    }
+  ]
+}
