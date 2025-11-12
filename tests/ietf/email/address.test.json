@@ -1,0 +1,406 @@
+{
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../schemas/ietf/email/address.json",
+  "tests": [
+    {
+      "description": "Invalid type - number",
+      "data": 123,
+      "valid": false
+    },
+    {
+      "description": "Invalid type - boolean",
+      "data": true,
+      "valid": false
+    },
+    {
+      "description": "Invalid type - null",
+      "data": null,
+      "valid": false
+    },
+    {
+      "description": "Invalid type - array",
+      "data": [],
+      "valid": false
+    },
+    {
+      "description": "Invalid type - object",
+      "data": {},
+      "valid": false
+    },
+    {
+      "description": "Simple email address",
+      "data": "user@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email with subdomain",
+      "data": "user@mail.example.com",
+      "valid": true
+    },
+    {
+      "description": "Email with multiple subdomains",
+      "data": "user@mail.server.example.com",
+      "valid": true
+    },
+    {
+      "description": "Email with dots in local part",
+      "data": "john.doe@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email with plus sign",
+      "data": "user+tag@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email with hyphen in local part",
+      "data": "user-name@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email with underscore in local part",
+      "data": "user_name@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email with numbers in local part",
+      "data": "user123@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email with numbers in domain",
+      "data": "user@example123.com",
+      "valid": true
+    },
+    {
+      "description": "Email with hyphen in domain",
+      "data": "user@ex-ample.com",
+      "valid": true
+    },
+    {
+      "description": "Single character local part",
+      "data": "a@example.com",
+      "valid": true
+    },
+    {
+      "description": "Single character domain label",
+      "data": "user@a.com",
+      "valid": true
+    },
+    {
+      "description": "Long local part",
+      "data": "verylonglocalpartname@example.com",
+      "valid": true
+    },
+    {
+      "description": "Long domain",
+      "data": "user@verylongdomainname.example.com",
+      "valid": true
+    },
+    {
+      "description": "Multiple dots in local part",
+      "data": "first.middle.last@example.com",
+      "valid": true
+    },
+    {
+      "description": "Quoted string local part with spaces",
+      "data": "\"john doe\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Quoted string with special characters",
+      "data": "\"user@host\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Quoted string with escaped quotes",
+      "data": "\"user\\\"name\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Quoted string with backslash",
+      "data": "\"user\\\\name\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Domain literal with IPv4",
+      "data": "user@[192.168.1.1]",
+      "valid": true
+    },
+    {
+      "description": "Domain literal with IPv4 zeros",
+      "data": "user@[0.0.0.0]",
+      "valid": true
+    },
+    {
+      "description": "Domain literal with IPv4 max values",
+      "data": "user@[255.255.255.255]",
+      "valid": true
+    },
+    {
+      "description": "Domain literal with IPv4 localhost",
+      "data": "user@[127.0.0.1]",
+      "valid": true
+    },
+    {
+      "description": "All special characters in local part",
+      "data": "!#$%&'*+-/=?^_`{|}~@example.com",
+      "valid": true
+    },
+    {
+      "description": "Email with .org TLD",
+      "data": "admin@example.org",
+      "valid": true
+    },
+    {
+      "description": "Email with .net TLD",
+      "data": "webmaster@example.net",
+      "valid": true
+    },
+    {
+      "description": "Email with country code TLD",
+      "data": "user@example.co.uk",
+      "valid": true
+    },
+    {
+      "description": "Email with new gTLD",
+      "data": "user@example.technology",
+      "valid": true
+    },
+    {
+      "description": "Uppercase letters in local part",
+      "data": "User@example.com",
+      "valid": true
+    },
+    {
+      "description": "Uppercase letters in domain",
+      "data": "user@Example.COM",
+      "valid": true
+    },
+    {
+      "description": "Mixed case throughout",
+      "data": "JoHn.DoE@ExAmPlE.CoM",
+      "valid": true
+    },
+    {
+      "description": "Numeric local part",
+      "data": "12345@example.com",
+      "valid": true
+    },
+    {
+      "description": "Local part starting with number",
+      "data": "1user@example.com",
+      "valid": true
+    },
+    {
+      "description": "Domain starting with number",
+      "data": "user@1example.com",
+      "valid": true
+    },
+    {
+      "description": "Two letter TLD",
+      "data": "user@example.io",
+      "valid": true
+    },
+    {
+      "description": "Three letter TLD",
+      "data": "user@example.com",
+      "valid": true
+    },
+    {
+      "description": "Four letter TLD",
+      "data": "user@example.info",
+      "valid": true
+    },
+    {
+      "description": "Numeric domain labels (valid per RFC 5322)",
+      "data": "user@192.168.1.1",
+      "valid": true
+    },
+    {
+      "description": "Missing @ symbol",
+      "data": "userexample.com",
+      "valid": false
+    },
+    {
+      "description": "Multiple @ symbols",
+      "data": "user@host@example.com",
+      "valid": false
+    },
+    {
+      "description": "Missing local part",
+      "data": "@example.com",
+      "valid": false
+    },
+    {
+      "description": "Missing domain",
+      "data": "user@",
+      "valid": false
+    },
+    {
+      "description": "Empty string",
+      "data": "",
+      "valid": false
+    },
+    {
+      "description": "Just @",
+      "data": "@",
+      "valid": false
+    },
+    {
+      "description": "Space in local part (unquoted)",
+      "data": "user name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Space in domain",
+      "data": "user@exam ple.com",
+      "valid": false
+    },
+    {
+      "description": "Leading dot in local part",
+      "data": ".user@example.com",
+      "valid": false
+    },
+    {
+      "description": "Trailing dot in local part",
+      "data": "user.@example.com",
+      "valid": false
+    },
+    {
+      "description": "Consecutive dots in local part",
+      "data": "user..name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Leading hyphen in domain label",
+      "data": "user@-example.com",
+      "valid": false
+    },
+    {
+      "description": "Trailing hyphen in domain label",
+      "data": "user@example-.com",
+      "valid": false
+    },
+    {
+      "description": "Domain ending with dot",
+      "data": "user@example.com.",
+      "valid": false
+    },
+    {
+      "description": "Domain starting with dot",
+      "data": "user@.example.com",
+      "valid": false
+    },
+    {
+      "description": "Consecutive dots in domain",
+      "data": "user@example..com",
+      "valid": false
+    },
+    {
+      "description": "Single label domain (valid per RFC 5322)",
+      "data": "user@example",
+      "valid": true
+    },
+    {
+      "description": "Invalid characters in local part",
+      "data": "user<>@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid characters in domain",
+      "data": "user@exam_ple.com",
+      "valid": false
+    },
+    {
+      "description": "Unquoted special character at",
+      "data": "user@name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Parentheses in unquoted local part",
+      "data": "user(comment)@example.com",
+      "valid": false
+    },
+    {
+      "description": "Brackets in unquoted local part",
+      "data": "user[name]@example.com",
+      "valid": false
+    },
+    {
+      "description": "Backslash in unquoted local part",
+      "data": "user\\name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Comma in unquoted local part",
+      "data": "user,name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Semicolon in unquoted local part",
+      "data": "user;name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Colon in unquoted local part",
+      "data": "user:name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Quote in unquoted local part",
+      "data": "user\"name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Less than in unquoted local part",
+      "data": "user<name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Greater than in unquoted local part",
+      "data": "user>name@example.com",
+      "valid": false
+    },
+    {
+      "description": "IPv4 with invalid octet (256)",
+      "data": "user@[256.1.1.1]",
+      "valid": false
+    },
+    {
+      "description": "IPv4 with invalid octet (999)",
+      "data": "user@[999.999.999.999]",
+      "valid": false
+    },
+    {
+      "description": "IPv4 with missing octet",
+      "data": "user@[192.168.1]",
+      "valid": false
+    },
+    {
+      "description": "IPv4 with extra octet",
+      "data": "user@[192.168.1.1.1]",
+      "valid": false
+    },
+    {
+      "description": "Unclosed quoted string",
+      "data": "\"user@example.com",
+      "valid": false
+    },
+    {
+      "description": "Unclosed domain literal",
+      "data": "user@[192.168.1.1",
+      "valid": false
+    },
+    {
+      "description": "Only quoted string",
+      "data": "\"user\"",
+      "valid": false
+    },
+    {
+      "description": "Only domain",
+      "data": "example.com",
+      "valid": false
+    }
+  ]
+}
