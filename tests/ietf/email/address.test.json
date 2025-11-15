@@ -1,0 +1,398 @@
+{
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../schemas/ietf/email/address.json",
+  "tests": [
+    {
+      "data": "user@example.com",
+      "valid": true
+    },
+    {
+      "data": "john.doe@example.org",
+      "valid": true
+    },
+    {
+      "data": "admin@mail.example.net",
+      "valid": true
+    },
+    {
+      "data": "test+tag@example.co.uk",
+      "valid": true
+    },
+    {
+      "data": "user_name@example.com",
+      "valid": true
+    },
+    {
+      "data": "user-name@example.com",
+      "valid": true
+    },
+    {
+      "data": "user123@example.com",
+      "valid": true
+    },
+    {
+      "data": "123user@example.com",
+      "valid": true
+    },
+    {
+      "data": "a@example.com",
+      "valid": true
+    },
+    {
+      "data": "test@subdomain.example.com",
+      "valid": true
+    },
+    {
+      "data": "test@sub.domain.example.com",
+      "valid": true
+    },
+    {
+      "data": "user!test@example.com",
+      "valid": true
+    },
+    {
+      "data": "user#test@example.com",
+      "valid": true
+    },
+    {
+      "data": "user$test@example.com",
+      "valid": true
+    },
+    {
+      "data": "user%test@example.com",
+      "valid": true
+    },
+    {
+      "data": "user&test@example.com",
+      "valid": true
+    },
+    {
+      "data": "user'test@example.com",
+      "valid": true
+    },
+    {
+      "data": "user*test@example.com",
+      "valid": true
+    },
+    {
+      "data": "user+test@example.com",
+      "valid": true
+    },
+    {
+      "data": "user/test@example.com",
+      "valid": true
+    },
+    {
+      "data": "user=test@example.com",
+      "valid": true
+    },
+    {
+      "data": "user?test@example.com",
+      "valid": true
+    },
+    {
+      "data": "user^test@example.com",
+      "valid": true
+    },
+    {
+      "data": "user`test@example.com",
+      "valid": true
+    },
+    {
+      "data": "user{test@example.com",
+      "valid": true
+    },
+    {
+      "data": "user|test@example.com",
+      "valid": true
+    },
+    {
+      "data": "user}test@example.com",
+      "valid": true
+    },
+    {
+      "data": "user~test@example.com",
+      "valid": true
+    },
+    {
+      "data": "first.last@example.com",
+      "valid": true
+    },
+    {
+      "data": "first.middle.last@example.com",
+      "valid": true
+    },
+    {
+      "data": "\"quoted.user\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "\"quoted user\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "\"user@quoted\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "\"user\\\"quoted\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "\"user\\\\backslash\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "user@[192.168.1.1]",
+      "valid": true
+    },
+    {
+      "data": "user@[IPv6:2001:db8::1]",
+      "valid": true
+    },
+    {
+      "data": "user@example-domain.com",
+      "valid": true
+    },
+    {
+      "data": "user@example123.com",
+      "valid": true
+    },
+    {
+      "data": "user@123example.com",
+      "valid": true
+    },
+    {
+      "data": "user@ex.co",
+      "valid": true
+    },
+    {
+      "data": "user@e.com",
+      "valid": true
+    },
+    {
+      "data": "a@b.c",
+      "valid": true
+    },
+    {
+      "data": "test@localhost",
+      "valid": true
+    },
+    {
+      "data": "",
+      "valid": false
+    },
+    {
+      "data": "user",
+      "valid": false
+    },
+    {
+      "data": "@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@",
+      "valid": false
+    },
+    {
+      "data": "user@@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example@com",
+      "valid": false
+    },
+    {
+      "data": "user name@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example .com",
+      "valid": false
+    },
+    {
+      "data": "user@example. com",
+      "valid": false
+    },
+    {
+      "data": "user@example..com",
+      "valid": false
+    },
+    {
+      "data": ".user@example.com",
+      "valid": false
+    },
+    {
+      "data": "user.@example.com",
+      "valid": false
+    },
+    {
+      "data": "user..name@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@.example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example.com.",
+      "valid": false
+    },
+    {
+      "data": "user@-example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example-.com",
+      "valid": false
+    },
+    {
+      "data": "user@example.com-",
+      "valid": false
+    },
+    {
+      "data": "user@example",
+      "valid": true
+    },
+    {
+      "data": "user(comment)@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@(comment)example.com",
+      "valid": false
+    },
+    {
+      "data": "\"user@example.com",
+      "valid": false
+    },
+    {
+      "data": "user\"@example.com",
+      "valid": false
+    },
+    {
+      "data": "\"user@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@[192.168.1.1",
+      "valid": false
+    },
+    {
+      "data": "user@192.168.1.1]",
+      "valid": false
+    },
+    {
+      "data": "user@[]",
+      "valid": true
+    },
+    {
+      "data": "user@[",
+      "valid": false
+    },
+    {
+      "data": "user@]",
+      "valid": false
+    },
+    {
+      "data": null,
+      "valid": false
+    },
+    {
+      "data": true,
+      "valid": false
+    },
+    {
+      "data": false,
+      "valid": false
+    },
+    {
+      "data": 123,
+      "valid": false
+    },
+    {
+      "data": [],
+      "valid": false
+    },
+    {
+      "data": {},
+      "valid": false
+    },
+    {
+      "data": "user@example,com",
+      "valid": false
+    },
+    {
+      "data": "user;test@example.com",
+      "valid": false
+    },
+    {
+      "data": "user<test@example.com",
+      "valid": false
+    },
+    {
+      "data": "user>test@example.com",
+      "valid": false
+    },
+    {
+      "data": "user[test@example.com",
+      "valid": false
+    },
+    {
+      "data": "user]test@example.com",
+      "valid": false
+    },
+    {
+      "data": "user:test@example.com",
+      "valid": false
+    },
+    {
+      "data": "user,test@example.com",
+      "valid": false
+    },
+    {
+      "data": "user\\test@example.com",
+      "valid": false
+    },
+    {
+      "data": "user\"test@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@exam ple.com",
+      "valid": false
+    },
+    {
+      "data": "user\t@example.com",
+      "valid": false
+    },
+    {
+      "data": "user\n@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example\n.com",
+      "valid": false
+    },
+    {
+      "data": "user @example.com",
+      "valid": false
+    },
+    {
+      "data": " user@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example.com ",
+      "valid": false
+    },
+    {
+      "data": "user@ example.com",
+      "valid": false
+    },
+    {
+      "data": "user @example.com",
+      "valid": false
+    }
+  ]
+}
