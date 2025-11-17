@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ISO 8601-1:2019 Duration (Alternative Calendar Extended Format)",
-  "description": "A duration in alternative extended format P[YYYY-MM-DD]T[HH:MM:SS] (§5.5.2.4)",
+  "description": "A duration in alternative extended format P[YYYY-MM-DD]T[HH:MM:SS] (§5.5.2.4). This schema prevents invalid month/day combinations (e.g., February 30, April 31) but does not validate leap years.",
   "$comment": "https://www.iso.org/standard/70907.html",
   "examples": [
     "P0002-01-10T22:33:55",
@@ -10,5 +10,15 @@
   ],
   "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
   "type": "string",
-  "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])T(?:[01][0-9]|2[0-3]):(?:[0-5][0-9]):(?:[0-5][0-9])$"
+  "anyOf": [
+    {
+      "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})-(?:01|03|05|07|08|10|12)-(?:0[1-9]|[12][0-9]|3[01])T(?:[01][0-9]|2[0-3]):(?:[0-5][0-9]):(?:[0-5][0-9])$"
+    },
+    {
+      "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})-(?:04|06|09|11)-(?:0[1-9]|[12][0-9]|30)T(?:[01][0-9]|2[0-3]):(?:[0-5][0-9]):(?:[0-5][0-9])$"
+    },
+    {
+      "pattern": "^P(?:[0-9]{4}|[+-][0-9]{5,})-02-(?:0[1-9]|1[0-9]|2[0-9])T(?:[01][0-9]|2[0-3]):(?:[0-5][0-9]):(?:[0-5][0-9])$"
+    }
+  ]
 }
