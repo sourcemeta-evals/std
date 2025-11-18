@@ -1,0 +1,328 @@
+{
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../schemas/ietf/email/address.json",
+  "tests": [
+    {
+      "data": "user@example.com",
+      "valid": true
+    },
+    {
+      "data": "john.doe@example.org",
+      "valid": true
+    },
+    {
+      "data": "user+tag@example.net",
+      "valid": true
+    },
+    {
+      "data": "simple@example.com",
+      "valid": true
+    },
+    {
+      "data": "very.common@example.com",
+      "valid": true
+    },
+    {
+      "data": "disposable.style.email.with+symbol@example.com",
+      "valid": true
+    },
+    {
+      "data": "other.email-with-hyphen@example.com",
+      "valid": true
+    },
+    {
+      "data": "fully-qualified-domain@example.com",
+      "valid": true
+    },
+    {
+      "data": "user.name+tag+sorting@example.com",
+      "valid": true
+    },
+    {
+      "data": "x@example.com",
+      "valid": true
+    },
+    {
+      "data": "example-indeed@strange-example.com",
+      "valid": true
+    },
+    {
+      "data": "admin@mailserver1",
+      "valid": true
+    },
+    {
+      "data": "example@s.example",
+      "valid": true
+    },
+    {
+      "data": "mailhost!username@example.org",
+      "valid": true
+    },
+    {
+      "data": "user%example.com@example.org",
+      "valid": true
+    },
+    {
+      "data": "user-@example.org",
+      "valid": true
+    },
+    {
+      "data": "postmaster@[123.123.123.123]",
+      "valid": true
+    },
+    {
+      "data": "user@[IPv6:2001:db8::1]",
+      "valid": true
+    },
+    {
+      "data": "\"john..doe\"@example.org",
+      "valid": true
+    },
+    {
+      "data": "\"john@doe\"@example.org",
+      "valid": true
+    },
+    {
+      "data": "\"john doe\"@example.org",
+      "valid": true
+    },
+    {
+      "data": "\"john\\\"doe\"@example.org",
+      "valid": true
+    },
+    {
+      "data": "\"\"@example.org",
+      "valid": true
+    },
+    {
+      "data": "user@123.123.123.123",
+      "valid": true
+    },
+    {
+      "data": "1234567890@example.com",
+      "valid": true
+    },
+    {
+      "data": "_______@example.com",
+      "valid": true
+    },
+    {
+      "data": "test.email-with-hyphen@example.com",
+      "valid": true
+    },
+    {
+      "data": "a@b.c",
+      "valid": true
+    },
+    {
+      "data": "test/test@test.com",
+      "valid": true
+    },
+    {
+      "data": "test=test@test.com",
+      "valid": true
+    },
+    {
+      "data": "test?test@test.com",
+      "valid": true
+    },
+    {
+      "data": "test'test@test.com",
+      "valid": true
+    },
+    {
+      "data": "test`test@test.com",
+      "valid": true
+    },
+    {
+      "data": "test#test@test.com",
+      "valid": true
+    },
+    {
+      "data": "test$test@test.com",
+      "valid": true
+    },
+    {
+      "data": "test%test@test.com",
+      "valid": true
+    },
+    {
+      "data": "test&test@test.com",
+      "valid": true
+    },
+    {
+      "data": "test*test@test.com",
+      "valid": true
+    },
+    {
+      "data": "test^test@test.com",
+      "valid": true
+    },
+    {
+      "data": "test{test@test.com",
+      "valid": true
+    },
+    {
+      "data": "test}test@test.com",
+      "valid": true
+    },
+    {
+      "data": "test|test@test.com",
+      "valid": true
+    },
+    {
+      "data": "test~test@test.com",
+      "valid": true
+    },
+    {
+      "data": "Abc@example.com",
+      "valid": true
+    },
+    {
+      "data": "ABC@EXAMPLE.COM",
+      "valid": true
+    },
+    {
+      "data": "user@[192.168.1.1]",
+      "valid": true
+    },
+    {
+      "data": "",
+      "valid": false
+    },
+    {
+      "data": "plainaddress",
+      "valid": false
+    },
+    {
+      "data": "@missinglocalpart.com",
+      "valid": false
+    },
+    {
+      "data": "missingatsign.com",
+      "valid": false
+    },
+    {
+      "data": "missingdomain@",
+      "valid": false
+    },
+    {
+      "data": "two@@ats.com",
+      "valid": false
+    },
+    {
+      "data": ".startswithdot@example.com",
+      "valid": false
+    },
+    {
+      "data": "endswithdot.@example.com",
+      "valid": false
+    },
+    {
+      "data": "two..dots@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@.example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example..com",
+      "valid": false
+    },
+    {
+      "data": "user@-example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example-.com",
+      "valid": false
+    },
+    {
+      "data": "user name@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example .com",
+      "valid": false
+    },
+    {
+      "data": "user@example.com.",
+      "valid": false
+    },
+    {
+      "data": "user(comment)@example.com",
+      "valid": false
+    },
+    {
+      "data": "user<>@example.com",
+      "valid": false
+    },
+    {
+      "data": "user[]@example.com",
+      "valid": false
+    },
+    {
+      "data": "user\\@example.com",
+      "valid": false
+    },
+    {
+      "data": "user,name@example.com",
+      "valid": false
+    },
+    {
+      "data": "user;name@example.com",
+      "valid": false
+    },
+    {
+      "data": "user:name@example.com",
+      "valid": false
+    },
+    {
+      "data": " user@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example.com ",
+      "valid": false
+    },
+    {
+      "data": "user@[unclosed",
+      "valid": false
+    },
+    {
+      "data": "user@unopened]",
+      "valid": false
+    },
+    {
+      "data": null,
+      "valid": false
+    },
+    {
+      "data": true,
+      "valid": false
+    },
+    {
+      "data": false,
+      "valid": false
+    },
+    {
+      "data": 123,
+      "valid": false
+    },
+    {
+      "data": [],
+      "valid": false
+    },
+    {
+      "data": {},
+      "valid": false
+    },
+    {
+      "data": {
+        "email": "user@example.com"
+      },
+      "valid": false
+    }
+  ]
+}
