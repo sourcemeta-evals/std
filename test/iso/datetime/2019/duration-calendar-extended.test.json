@@ -281,6 +281,21 @@
       "description": "Invalid - second without leading zero (single digit)",
       "data": "P0000-01-01T00:00:1",
       "valid": false
+    },
+    {
+      "description": "Invalid - Feb 30",
+      "data": "P2023-02-30T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - April 31",
+      "data": "P2023-04-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Valid - Feb 29 (leap years aside)",
+      "data": "P2023-02-29T00:00:00",
+      "valid": true
     }
   ]
 }
