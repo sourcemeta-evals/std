@@ -1,0 +1,206 @@
+{
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../schemas/ietf/email/address.json",
+  "tests": [
+    {
+      "description": "Simple email",
+      "data": "simple@example.com",
+      "valid": true
+    },
+    {
+      "description": "Very common email",
+      "data": "very.common@example.com",
+      "valid": true
+    },
+    {
+      "description": "Disposable style email with + symbol",
+      "data": "disposable.style.email.with+symbol@example.com",
+      "valid": true
+    },
+    {
+      "description": "Other email with hyphen",
+      "data": "other.email-with-hyphen@example.com",
+      "valid": true
+    },
+    {
+      "description": "Fully qualified domain",
+      "data": "fully-qualified-domain@example.com",
+      "valid": true
+    },
+    {
+      "description": "User name with tag and sorting",
+      "data": "user.name+tag+sorting@example.com",
+      "valid": true
+    },
+    {
+      "description": "One letter local part",
+      "data": "x@example.com",
+      "valid": true
+    },
+    {
+      "description": "Example indeed",
+      "data": "example-indeed@strange-example.com",
+      "valid": true
+    },
+    {
+      "description": "Admin at mailserver1",
+      "data": "admin@mailserver1",
+      "valid": true
+    },
+    {
+      "description": "Example at s.example",
+      "data": "example@s.example",
+      "valid": true
+    },
+    {
+      "description": "Quoted space",
+      "data": "\" \"@example.org",
+      "valid": true
+    },
+    {
+      "description": "Quoted double dot",
+      "data": "\"john..doe\"@example.org",
+      "valid": true
+    },
+    {
+      "description": "Mailhost!username",
+      "data": "mailhost!username@example.org",
+      "valid": true
+    },
+    {
+      "description": "User%example.com",
+      "data": "user%example.com@example.org",
+      "valid": true
+    },
+    {
+      "description": "User-",
+      "data": "user-@example.org",
+      "valid": true
+    },
+    {
+      "description": "Missing @",
+      "data": "Abc.example.com",
+      "valid": false
+    },
+    {
+      "description": "Double @",
+      "data": "A@b@c@example.com",
+      "valid": false
+    },
+    {
+      "description": "Special characters in local part outside quotes",
+      "data": "a\"b(c)d,e:f;g<h>i[j\\k]l@example.com",
+      "valid": false
+    },
+    {
+      "description": "Quoted string with escaped quote",
+      "data": "\"just\\\"not\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Quoted string with escaped backslash",
+      "data": "\"just\\\\not\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Space in local part outside quotes",
+      "data": "just\"not\"right@example.com",
+      "valid": false
+    },
+    {
+      "description": "Double dot in local part",
+      "data": "john..doe@example.com",
+      "valid": false
+    },
+    {
+      "description": "Double dot in domain",
+      "data": "john.doe@example..com",
+      "valid": false
+    },
+    {
+      "description": "Trailing dot in local part",
+      "data": "john.doe.@example.com",
+      "valid": false
+    },
+    {
+      "description": "Leading dot in local part",
+      "data": ".john.doe@example.com",
+      "valid": false
+    },
+    {
+      "description": "Trailing dot in domain",
+      "data": "john.doe@example.com.",
+      "valid": false
+    },
+    {
+      "description": "Leading dot in domain",
+      "data": "john.doe@.example.com",
+      "valid": false
+    },
+    {
+      "description": "Domain literal",
+      "data": "user@[192.168.1.1]",
+      "valid": true
+    },
+    {
+      "description": "Domain literal with IPv6",
+      "data": "user@[IPv6:2001:db8::1]",
+      "valid": true
+    },
+    {
+      "description": "Comment in local part",
+      "data": "john.doe(comment)@example.com",
+      "valid": true
+    },
+    {
+      "description": "Comment in domain",
+      "data": "john.doe@example.com(comment)",
+      "valid": true
+    },
+    {
+      "description": "Comment at start",
+      "data": "(comment)john.doe@example.com",
+      "valid": true
+    },
+    {
+      "description": "Comment with special chars",
+      "data": "john.doe@(comment(nested))example.com",
+      "valid": false
+    },
+    {
+      "description": "Comment with quoted pair",
+      "data": "john.doe@(comment\\))example.com",
+      "valid": true
+    },
+    {
+      "description": "FWS in local part",
+      "data": "john.doe @example.com",
+      "valid": true
+    },
+    {
+      "description": "FWS in domain",
+      "data": "john.doe@ example.com",
+      "valid": true
+    },
+    {
+      "description": "FWS around dot in local part (obs-local-part)",
+      "data": "john . doe@example.com",
+      "valid": true
+    },
+    {
+      "description": "FWS around dot in domain (obs-domain)",
+      "data": "john.doe@example . com",
+      "valid": true
+    },
+    {
+      "description": "Quoted string with FWS",
+      "data": "\"john doe\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Quoted string with folding FWS",
+      "data": "\"john\\r\\n doe\"@example.com",
+      "valid": true
+    }
+  ]
+}
