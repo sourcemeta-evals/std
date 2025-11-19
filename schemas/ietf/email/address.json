@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RFC 5322 Email Address (Addr-Spec)",
+  "description": "An Internet email address following the addr-spec grammar defined in RFC 5322",
+  "$comment": "https://www.rfc-editor.org/rfc/rfc5322#section-3.4.1",
+  "examples": [
+    "user@example.com",
+    "user.name@example.org",
+    "\"quoted string\"@example.com"
+  ],
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "type": "string",
+  "pattern": "^(?:(?:[ \\t]+|\\((?:[^()\\\\]|\\\\.)*\\))*)?(?:[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x20\\x21\\x23-\\x5B\\x5D-\\x7E]|\\\\[\\x20-\\x7E])*\")(?:(?:[ \\t]+|\\((?:[^()\\\\]|\\\\.)*\\))*)?@(?:(?:[ \\t]+|\\((?:[^()\\\\]|\\\\.)*\\))*)?(?:[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\\[(?:[\\x20-\\x5A\\x5E-\\x7E]|\\\\[\\x20-\\x7E])*\\])(?:(?:[ \\t]+|\\((?:[^()\\\\]|\\\\.)*\\))*)?$"
+}
