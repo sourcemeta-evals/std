@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../schemas/ietf/email/address.json",
+  "tests": [
+    {
+      "description": "Simple valid email",
+      "data": "user@example.com",
+      "valid": true
+    },
+    {
+      "description": "Dot-atom local part",
+      "data": "user.name@example.com",
+      "valid": true
+    },
+    {
+      "description": "Quoted string local part with escaped space",
+      "data": "\"user\\ name\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Quoted string with escaped quote",
+      "data": "\"user\\\"name\"@example.com",
+      "valid": true
+    },
+    {
+      "description": "Domain literal",
+      "data": "user@[192.168.1.1]",
+      "valid": true
+    },
+    {
+      "description": "Missing @",
+      "data": "userexample.com",
+      "valid": false
+    },
+    {
+      "description": "Missing domain",
+      "data": "user@",
+      "valid": false
+    },
+    {
+      "description": "Missing local part",
+      "data": "@example.com",
+      "valid": false
+    },
+    {
+      "description": "Invalid character in dot-atom",
+      "data": "user name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Double dot in dot-atom",
+      "data": "user..name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Unclosed quoted string",
+      "data": "\"user name@example.com",
+      "valid": false
+    },
+    {
+      "description": "Unclosed domain literal",
+      "data": "user@[192.168.1.1",
+      "valid": false
+    }
+  ]
+}
