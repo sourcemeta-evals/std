@@ -281,6 +281,21 @@
       "description": "Invalid - second without leading zero (single digit)",
       "data": "P0000-01-01T00:00:1",
       "valid": false
+    },
+    {
+      "description": "Invalid - April 31 (April has 30 days)",
+      "data": "P0001-04-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - February 30",
+      "data": "P0001-02-30T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Valid - February 29 (allowed for leap year compatibility)",
+      "data": "P0001-02-29T00:00:00",
+      "valid": true
     }
   ]
 }
