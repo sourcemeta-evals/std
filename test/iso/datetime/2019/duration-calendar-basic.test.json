@@ -281,6 +281,46 @@
       "description": "Invalid - second without leading zero (single digit)",
       "data": "P00000101T00001",
       "valid": false
+    },
+    {
+      "description": "Invalid - February 30",
+      "data": "P00000230T000000",
+      "valid": false
+    },
+    {
+      "description": "Invalid - February 31",
+      "data": "P00000231T000000",
+      "valid": false
+    },
+    {
+      "description": "Invalid - April 31",
+      "data": "P00000431T000000",
+      "valid": false
+    },
+    {
+      "description": "Invalid - June 31",
+      "data": "P00000631T000000",
+      "valid": false
+    },
+    {
+      "description": "Invalid - September 31",
+      "data": "P00000931T000000",
+      "valid": false
+    },
+    {
+      "description": "Invalid - November 31",
+      "data": "P00001131T000000",
+      "valid": false
+    },
+    {
+      "description": "Valid - February 29 (leap years ignored)",
+      "data": "P00000229T000000",
+      "valid": true
+    },
+    {
+      "description": "Valid - April 30",
+      "data": "P00000430T000000",
+      "valid": true
     }
   ]
 }
