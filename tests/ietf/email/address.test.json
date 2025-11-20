@@ -1,0 +1,296 @@
+{
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "target": "../../../schemas/ietf/email/address.json",
+  "tests": [
+    {
+      "data": "simple@example.com",
+      "valid": true
+    },
+    {
+      "data": "local.part@example.com",
+      "valid": true
+    },
+    {
+      "data": "user@sub.domain.com",
+      "valid": true
+    },
+    {
+      "data": "test+tag@example.com",
+      "valid": true
+    },
+    {
+      "data": "user-name@example.com",
+      "valid": true
+    },
+    {
+      "data": "user_name@example.com",
+      "valid": true
+    },
+    {
+      "data": "a@b.com",
+      "valid": true
+    },
+    {
+      "data": "1234567890@example.com",
+      "valid": true
+    },
+    {
+      "data": "user@123.45.67.89",
+      "valid": true
+    },
+    {
+      "data": "user@[192.168.1.1]",
+      "valid": true
+    },
+    {
+      "data": "user@[IPv6:2001:db8::1]",
+      "valid": true
+    },
+    {
+      "data": "\"quoted\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "\"with space\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "\"with.dot\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "\"with\\\"quote\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "\"with\\\\backslash\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "user!def@example.com",
+      "valid": true
+    },
+    {
+      "data": "user#comment@example.com",
+      "valid": true
+    },
+    {
+      "data": "user$money@example.com",
+      "valid": true
+    },
+    {
+      "data": "user%encoded@example.com",
+      "valid": true
+    },
+    {
+      "data": "user&and@example.com",
+      "valid": true
+    },
+    {
+      "data": "user'apostrophe@example.com",
+      "valid": true
+    },
+    {
+      "data": "user*star@example.com",
+      "valid": true
+    },
+    {
+      "data": "user/slash@example.com",
+      "valid": true
+    },
+    {
+      "data": "user=equals@example.com",
+      "valid": true
+    },
+    {
+      "data": "user?question@example.com",
+      "valid": true
+    },
+    {
+      "data": "user^caret@example.com",
+      "valid": true
+    },
+    {
+      "data": "user`backtick@example.com",
+      "valid": true
+    },
+    {
+      "data": "user{brace@example.com",
+      "valid": true
+    },
+    {
+      "data": "user|pipe@example.com",
+      "valid": true
+    },
+    {
+      "data": "user}brace@example.com",
+      "valid": true
+    },
+    {
+      "data": "user~tilde@example.com",
+      "valid": true
+    },
+    {
+      "data": "very.common@example.com",
+      "valid": true
+    },
+    {
+      "data": "disposable.style.email.with+symbol@example.com",
+      "valid": true
+    },
+    {
+      "data": "other.email-with-hyphen@example.com",
+      "valid": true
+    },
+    {
+      "data": "fully-qualified-domain@example.com",
+      "valid": true
+    },
+    {
+      "data": "x@example.com",
+      "valid": true
+    },
+    {
+      "data": "example-indeed@strange-example.com",
+      "valid": true
+    },
+    {
+      "data": "example@s.example",
+      "valid": true
+    },
+    {
+      "data": "\"very.unusual.@.unusual.com\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "\"(),:;<>@[\\]\"@example.com",
+      "valid": true
+    },
+    {
+      "data": "",
+      "valid": false
+    },
+    {
+      "data": "plainaddress",
+      "valid": false
+    },
+    {
+      "data": "@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@",
+      "valid": false
+    },
+    {
+      "data": "user@.com",
+      "valid": false
+    },
+    {
+      "data": "user@example.",
+      "valid": false
+    },
+    {
+      "data": ".user@example.com",
+      "valid": false
+    },
+    {
+      "data": "user.@example.com",
+      "valid": false
+    },
+    {
+      "data": "user..name@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example..com",
+      "valid": false
+    },
+    {
+      "data": "user name@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example com",
+      "valid": false
+    },
+    {
+      "data": "user@@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example@com",
+      "valid": false
+    },
+    {
+      "data": " user@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@example.com ",
+      "valid": false
+    },
+    {
+      "data": "user@[192.168.1.1",
+      "valid": false
+    },
+    {
+      "data": "user@192.168.1.1]",
+      "valid": false
+    },
+    {
+      "data": "\"unclosed@example.com",
+      "valid": false
+    },
+    {
+      "data": "unclosed\"@example.com",
+      "valid": false
+    },
+    {
+      "data": "user(comment)@example.com",
+      "valid": false
+    },
+    {
+      "data": "user<bracket>@example.com",
+      "valid": false
+    },
+    {
+      "data": "user@[invalid[bracket]",
+      "valid": false
+    },
+    {
+      "data": null,
+      "valid": false
+    },
+    {
+      "data": true,
+      "valid": false
+    },
+    {
+      "data": false,
+      "valid": false
+    },
+    {
+      "data": 123,
+      "valid": false
+    },
+    {
+      "data": [],
+      "valid": false
+    },
+    {
+      "data": {},
+      "valid": false
+    },
+    {
+      "data": [ "user@example.com" ],
+      "valid": false
+    },
+    {
+      "data": {
+        "email": "user@example.com"
+      },
+      "valid": false
+    }
+  ]
+}

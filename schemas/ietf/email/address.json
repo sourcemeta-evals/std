@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RFC 5322 Email Address (Addr-Spec)",
+  "description": "An email address in the addr-spec format as defined in RFC 5322",
+  "$comment": "https://www.rfc-editor.org/rfc/rfc5322#section-3.4.1",
+  "examples": [
+    "simple@example.com",
+    "local.part@example.com",
+    "\"quoted\"@example.com",
+    "user@[192.168.1.1]",
+    "test+tag@sub.domain.com"
+  ],
+  "x-license": "https://github.com/sourcemeta/std/blob/main/LICENSE",
+  "type": "string",
+  "pattern": "^(?:[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[ !#-\\[\\]-~]|\\\\[ -~])*\")@(?:[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\\[(?:[ !-Z^-~]|\\\\[ -~])*\\])$",
+  "format": "email"
+}
