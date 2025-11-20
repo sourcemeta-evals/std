@@ -188,9 +188,94 @@
       "valid": true
     },
     {
-      "description": "Valid - day 31 (maximum valid day)",
+      "description": "Valid - day 31 in January (31-day month)",
       "data": "P0000-01-31T00:00:00",
       "valid": true
+    },
+    {
+      "description": "Valid - day 31 in March (31-day month)",
+      "data": "P0000-03-31T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - day 31 in May (31-day month)",
+      "data": "P0000-05-31T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - day 31 in July (31-day month)",
+      "data": "P0000-07-31T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - day 31 in August (31-day month)",
+      "data": "P0000-08-31T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - day 31 in October (31-day month)",
+      "data": "P0000-10-31T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - day 31 in December (31-day month)",
+      "data": "P0000-12-31T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - day 30 in April (30-day month)",
+      "data": "P0000-04-30T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - day 30 in June (30-day month)",
+      "data": "P0000-06-30T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - day 30 in September (30-day month)",
+      "data": "P0000-09-30T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - day 30 in November (30-day month)",
+      "data": "P0000-11-30T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Valid - day 29 in February (maximum valid day for February)",
+      "data": "P0000-02-29T00:00:00",
+      "valid": true
+    },
+    {
+      "description": "Invalid - day 31 in April (30-day month)",
+      "data": "P0000-04-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - day 31 in June (30-day month)",
+      "data": "P0000-06-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - day 31 in September (30-day month)",
+      "data": "P0000-09-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - day 31 in November (30-day month)",
+      "data": "P0000-11-31T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - day 30 in February",
+      "data": "P0000-02-30T00:00:00",
+      "valid": false
+    },
+    {
+      "description": "Invalid - day 31 in February",
+      "data": "P0000-02-31T00:00:00",
+      "valid": false
     },
     {
       "description": "Valid - hour 00 (minimum valid hour)",
